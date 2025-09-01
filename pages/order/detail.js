@@ -1,1 +1,123 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/order/detail"],{"2f49":function(e,t,r){"use strict";r.r(t);var s=r("3267"),i=r("5a81");for(var o in i)["default"].indexOf(o)<0&&function(e){r.d(t,e,(function(){return i[e]}))}(o);var n=r("828b"),d=Object(n["a"])(i["default"],s["b"],s["c"],!1,null,null,null,!1,s["a"],void 0);t["default"]=d.exports},3267:function(e,t,r){"use strict";r.d(t,"b",(function(){return i})),r.d(t,"c",(function(){return o})),r.d(t,"a",(function(){return s}));var s={uSteps:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-steps/u-steps")]).then(r.bind(null,"28cc8"))},uStepsItem:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-steps-item/u-steps-item")]).then(r.bind(null,"105c"))},uRate:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-rate/u-rate")]).then(r.bind(null,"2d16"))},uIcon:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(r.bind(null,"fa8a"))},uButton:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-button/u-button")]).then(r.bind(null,"1750"))},uPopup:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(r.bind(null,"5f49"))},shortcut:function(){return r.e("components/shortcut/shortcut").then(r.bind(null,"7dbc"))}},i=function(){var e=this,t=e.$createElement,r=(e._self._c,Number(e.userInfo.money)),s=Number(e.order_pay_price),i=Number(e.userInfo.money),o=Number(e.order_pay_price),n=Number(e.userInfo.money),d=Number(e.order_pay_price),u=Number(e.userInfo.money),a=Number(e.order_pay_price);e._isMounted||(e.e0=function(t){e.cashier_show=!1},e.e1=function(t){e.spk_box=!1}),e.$mp.data=Object.assign({},{$root:{m0:r,m1:s,m2:i,m3:o,m4:n,m5:d,m6:u,m7:a}})},o=[]},"424a":function(e,t,r){"use strict";(function(e,t){var s=r("47a9");r("8ae9");s(r("3240"));var i=s(r("2f49"));e.__webpack_require_UNI_MP_PLUGIN__=r,t(i.default)}).call(this,r("3223")["default"],r("df3c")["createPage"])},"5a81":function(e,t,r){"use strict";r.r(t);var s=r("e37c"),i=r.n(s);for(var o in s)["default"].indexOf(o)<0&&function(e){r.d(t,e,(function(){return s[e]}))}(o);t["default"]=i.a},e37c:function(e,t,r){"use strict";(function(e,r){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var s=getApp(),i={data:function(){return{order_id:null,userInfo:{},order:null,applet:{},mp:"",pay_mode:1,order_pay_price:0,cashier_show:!1,spk_box:!1,steps:[[{title:"创建订单",desc:" "},{title:"支付成功",desc:" ",error:!1},{title:"商家接单",desc:" "},{title:"",desc:" "},{title:"",desc:" "},{title:"订单完成",desc:" "}],[{title:"创建订单",desc:" "},{title:"订单取消",desc:" "}],[{title:"创建订单",desc:" "},{title:"退款处理",desc:" "},{title:"完成退款",desc:" "}]],steps_index:0}},props:{},onLoad:function(t){this.order_id=t.id,e.setNavigationBarTitle({title:this.$t("order.detail.title")}),this.applet=s.getApplet(),this.getOrderDetail(),this.getUserDetail(),this.mp="weixin"},onShow:function(){this.getOrderDetail()},methods:{addDish:function(){e.setStorageSync("from","order"),e.setStorageSync("table_id",this.order.table_id),s.goTo("shop/index")},setPay:function(e){if(2==e&&this.userInfo.money<Number(this.order_pay_price))return!1;this.pay_mode=e},payOrder:function(){this.order_pay_price=this.order.pay_price,this.cashier_show=!0},payment:function(){var t=this,r={order_id:t.order_id,pay_mode:t.pay_mode};e.showLoading({title:"正在处理..."}),s._post_form("user.order/pay",r,(function(r){(function(r){t.cashier_show=!1,-10===r.code?s.showError(r.msg,(function(){t.getOrderDetail()})):2==t.pay_mode?s.showSuccess("下单成功",(function(){t.getOrderDetail()})):e.requestPayment({timeStamp:r.data.payment.timeStamp,nonceStr:r.data.payment.nonceStr,package:r.data.payment.package,signType:r.data.payment.signType,paySign:r.data.payment.paySign,success:function(e){s.showSuccess("支付成功",(function(){t.getOrderDetail()}))},fail:function(e){var r="支付失败";"requestPayment:fail cancel"==e.errMsg&&(r="用户取消支付"),s.showError(r,(function(){t.getOrderDetail()}))}})})(r)}))},getOrderDetail:function(){var t=this;s._get("user.order/detail",{order_id:t.order_id},(function(r){var s=r.data;t.order=s;var i=new Date(s.create_time);if(i=Date.parse(i),10!=s.order_status.value&&30!=s.order_status.value||(10==s.order_mode.value&&(t.steps[0][3].title="正在备餐",t.steps[0][4].title="起菜完毕"),20==s.order_mode.value&&(t.steps[0][3].title="骑手接单",t.steps[0][4].title="骑手配送"),30==s.order_mode.value&&(t.steps[0][3].title="正在备餐",t.steps[0][4].title="取餐完毕"),t.steps[0][0].desc=e.$u.timeFormat(i,"mm月dd日 hh:MM"),20==s.pay_status.value&&(t.steps_index=1,t.steps[0][1].desc=e.$u.timeFormat(s.pay_time,"mm月dd日 hh:MM")),20==s.shop_status.value&&(10==s.pay_status.value&&(t.steps[0][1].error=!0),t.steps_index=2,t.steps[0][2].desc=e.$u.timeFormat(s.shop_time,"mm月dd日 hh:MM"),10==s.order_mode.value&&(10==s.delivery_status.value?(t.steps_index=3,t.steps[0][3].desc=e.$u.timeFormat(s.shop_time,"mm月dd日 hh:MM")):(t.steps_index=4,t.steps[0][3].desc=e.$u.timeFormat(s.delivery_time,"mm月dd日 hh:MM"),t.steps[0][4].desc=e.$u.timeFormat(s.delivery_time,"mm月dd日 hh:MM"))),20==s.order_mode.value&&s.delivery.delivery_status.value>10&&(t.steps_index=3,t.steps[0][3].desc=e.$u.timeFormat(s.delivery_time,"mm月dd日 hh:MM"),s.delivery.delivery_status.value>30&&(t.steps_index=4,t.steps[0][4].desc=e.$u.timeFormat(s.delivery.delivery_time,"mm月dd日 hh:MM"))),30==s.order_mode.value&&(10==s.delivery_status.value?(t.steps_index=3,t.steps[0][3].desc=e.$u.timeFormat(s.shop_time,"mm月dd日 hh:MM")):(t.steps_index=4,t.steps[0][3].desc=e.$u.timeFormat(s.delivery_time,"mm月dd日 hh:MM"),t.steps[0][4].desc=e.$u.timeFormat(s.delivery_time,"mm月dd日 hh:MM"))),20==s.receipt_status.value&&(t.steps_index=5,t.steps[0][5].desc=e.$u.timeFormat(s.receipt_time,"mm月dd日 hh:MM")))),20==s.order_status.value){t.steps[1][0].desc=e.$u.timeFormat(i,"mm月dd日 hh:MM");var o=new Date(s.update_time);o=Date.parse(o),t.steps[1][1].desc=e.$u.timeFormat(o,"mm月dd日 hh:MM"),t.steps_index=1}40==s.order_status.value&&(t.steps[2][0].desc=e.$u.timeFormat(i,"mm月dd日 hh:MM"),20!=s.refund_status.value?(t.steps_index=1,t.steps[2][1].desc=e.$u.timeFormat(s.refund_time,"mm月dd日 hh:MM")):(t.steps_index=2,t.steps[2][1].desc=e.$u.timeFormat(s.refund_time,"mm月dd日 hh:MM"),t.steps[2][2].desc=e.$u.timeFormat(s.refund_time,"mm月dd日 hh:MM")))}))},cancelOrder:function(){var t=this;e.showModal({title:"提示",content:"您确认要取消订单？",success:function(e){e.confirm&&s._post_form("user.order/cancel",{order_id:t.order_id},(function(e){t.getOrderDetail()}))}})},receipt:function(){var t=this;e.showModal({title:"提示",content:"您确认要完成订单？",success:function(e){e.confirm&&s._post_form("user.order/receipt",{order_id:t.order_id},(function(e){t.getOrderDetail()}))}})},spk:function(e){this.spk_box=!1,s._post_form("order/spk",{order_id:this.order_id,mode:e},(function(e){s.showSuccess(e.msg)}))},getUserDetail:function(){var e=this;s._get("user/detail",{},(function(t){e.userInfo=t.data}))},phone:function(t){e.makePhoneCall({phoneNumber:t})},copy:function(e){r.setClipboardData({data:e,success:function(e){}})},goTo:function(e){s.goTo(e)}}};t.default=i}).call(this,r("df3c")["default"],r("3223")["default"])}},[["424a","common/runtime","common/vendor"]]]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+  ["pages/order/detail"], { "2f49": function (e, t, r) { "use strict";
+      r.r(t); var s = r("3267"),
+        i = r("5a81"); for (var o in i)["default"].indexOf(o) < 0 && function (e) { r.d(t, e, (
+      function () { return i[e] })) }(o); var n = r("828b"),
+        d = Object(n["a"])(i["default"], s["b"], s["c"], !1, null, null, null, !1, s["a"], void 0);
+      t["default"] = d.exports }, 3267: function (e, t, r) { "use strict";
+      r.d(t, "b", (function () { return i })), r.d(t, "c", (function () { return o })), r.d(t, "a", (
+    function () { return s })); var s = { uSteps: function () { return Promise.all([r.e("common/vendor"), r.e(
+              "uni_modules/uview-ui/components/u-steps/u-steps")]).then(r.bind(null, "28cc8")) },
+          uStepsItem: function () { return Promise.all([r.e("common/vendor"), r.e(
+                "uni_modules/uview-ui/components/u-steps-item/u-steps-item")]).then(r.bind(null, "105c")) },
+          uRate: function () { return Promise.all([r.e("common/vendor"), r.e(
+              "uni_modules/uview-ui/components/u-rate/u-rate")]).then(r.bind(null, "2d16")) },
+      uIcon: function () { return Promise.all([r.e("common/vendor"), r.e(
+              "uni_modules/uview-ui/components/u-icon/u-icon")]).then(r.bind(null, "fa8a")) },
+        uButton: function () { return Promise.all([r.e("common/vendor"), r.e(
+              "uni_modules/uview-ui/components/u-button/u-button")]).then(r.bind(null, "1750")) },
+          uPopup: function () { return Promise.all([r.e("common/vendor"), r.e(
+                "uni_modules/uview-ui/components/u-popup/u-popup")]).then(r.bind(null, "5f49")) },
+          shortcut: function () { return r.e("components/shortcut/shortcut").then(r.bind(null, "7dbc")) } },
+        i = function () { var e = this,
+            t = e.$createElement,
+            r = (e._self._c, Number(e.userInfo.money)),
+            s = Number(e.order_pay_price),
+            i = Number(e.userInfo.money),
+            o = Number(e.order_pay_price),
+            n = Number(e.userInfo.money),
+            d = Number(e.order_pay_price),
+            u = Number(e.userInfo.money),
+            a = Number(e.order_pay_price);
+          e._isMounted || (e.e0 = function (t) { e.cashier_show = !1 }, e.e1 = function (t) { e.spk_box = !1 }), e
+            .$mp.data = Object.assign({}, { $root: { m0: r, m1: s, m2: i, m3: o, m4: n, m5: d, m6: u,
+              m7: a } }) },
+        o = [] }, "424a": function (e, t, r) { "use strict";
+      (function (e, t) { var s = r("47a9");
+        r("8ae9");
+        s(r("3240")); var i = s(r("2f49"));
+        e.__webpack_require_UNI_MP_PLUGIN__ = r, t(i.default) }).call(this, r("3223")["default"], r("df3c")[
+        "createPage"]) }, "5a81": function (e, t, r) { "use strict";
+      r.r(t); var s = r("e37c"),
+        i = r.n(s); for (var o in s)["default"].indexOf(o) < 0 && function (e) { r.d(t, e, (
+      function () { return s[e] })) }(o);
+      t["default"] = i.a }, e37c: function (e, t, r) { "use strict";
+      (function (e, r) { Object.defineProperty(t, "__esModule", { value: !0 }), t.default = void 0; var s =
+          getApp(),
+          i = { data: function () { return { order_id: null, userInfo: {}, order: null, applet: {}, mp: "",
+                pay_mode: 1, order_pay_price: 0, cashier_show: !1, spk_box: !1, steps: [
+                  [{ title: "创建订单", desc: " " }, { title: "支付成功", desc: " ", error: !1 }, { title: "商家接单",
+                    desc: " " }, { title: "", desc: " " }, { title: "", desc: " " }, { title: "订单完成",
+                    desc: " " }],
+                  [{ title: "创建订单", desc: " " }, { title: "订单取消", desc: " " }],
+                  [{ title: "创建订单", desc: " " }, { title: "退款处理", desc: " " }, { title: "完成退款", desc: " " }]
+                ], steps_index: 0 } }, props: {}, onLoad: function (t) { this.order_id = t.id, e
+                .setNavigationBarTitle({ title: this.$t("order.detail.title") }), this.applet = s.getApplet(),
+                this.getOrderDetail(), this.getUserDetail(), this.mp = "weixin" }, onShow: function () { this
+                .getOrderDetail() }, methods: { addDish: function () { e.setStorageSync("from", "order"), e
+                  .setStorageSync("table_id", this.order.table_id), s.goTo("shop/index") }, setPay: function (
+              e) { if (2 == e && this.userInfo.money < Number(this.order_pay_price)) return !1;
+                this.pay_mode = e }, payOrder: function () { this.order_pay_price = this.order.pay_price, this
+                  .cashier_show = !0 }, payment: function () { var t = this,
+                  r = { order_id: t.order_id, pay_mode: t.pay_mode };
+                e.showLoading({ title: "正在处理..." }), s._post_form("user.order/pay", r, (function (r) {
+                  (function (r) { t.cashier_show = !1, -10 === r.code ? s.showError(r.msg, (
+                  function () { t.getOrderDetail() })) : 2 == t.pay_mode ? s.showSuccess("下单成功", (
+                      function () { t.getOrderDetail() })) : e.requestPayment({ timeStamp: r.data
+                        .payment.timeStamp, nonceStr: r.data.payment.nonceStr, package: r.data
+                        .payment.package, signType: r.data.payment.signType, paySign: r.data
+                        .payment.paySign, success: function (e) { s.showSuccess("支付成功", (
+                          function () { t.getOrderDetail() })) }, fail: function (e) { var r =
+                          "支付失败"; "requestPayment:fail cancel" == e.errMsg && (r = "用户取消支付"), s
+                          .showError(r, (function () { t.getOrderDetail() })) } }) })(r) })) },
+              getOrderDetail: function () { var t = this;
+                  s._get("user.order/detail", { order_id: t.order_id }, (function (r) { var s = r.data;
+                    t.order = s; var i = new Date(s.create_time); if (i = Date.parse(i), 10 != s
+                      .order_status.value && 30 != s.order_status.value || (10 == s.order_mode.value && (t
+                          .steps[0][3].title = "正在备餐", t.steps[0][4].title = "起菜完毕"), 20 == s.order_mode
+                        .value && (t.steps[0][3].title = "骑手接单", t.steps[0][4].title = "骑手配送"), 30 == s
+                        .order_mode.value && (t.steps[0][3].title = "正在备餐", t.steps[0][4].title = "取餐完毕"),
+                        t.steps[0][0].desc = e.$u.timeFormat(i, "mm月dd日 hh:MM"), 20 == s.pay_status
+                        .value && (t.steps_index = 1, t.steps[0][1].desc = e.$u.timeFormat(s.pay_time,
+                          "mm月dd日 hh:MM")), 20 == s.shop_status.value && (10 == s.pay_status.value && (t
+                            .steps[0][1].error = !0), t.steps_index = 2, t.steps[0][2].desc = e.$u
+                          .timeFormat(s.shop_time, "mm月dd日 hh:MM"), 10 == s.order_mode.value && (10 == s
+                            .delivery_status.value ? (t.steps_index = 3, t.steps[0][3].desc = e.$u
+                              .timeFormat(s.shop_time, "mm月dd日 hh:MM")) : (t.steps_index = 4, t.steps[0][
+                                3].desc = e.$u.timeFormat(s.delivery_time, "mm月dd日 hh:MM"), t.steps[0][4]
+                              .desc = e.$u.timeFormat(s.delivery_time, "mm月dd日 hh:MM"))), 20 == s
+                          .order_mode.value && s.delivery.delivery_status.value > 10 && (t.steps_index =
+                            3, t.steps[0][3].desc = e.$u.timeFormat(s.delivery_time, "mm月dd日 hh:MM"), s
+                            .delivery.delivery_status.value > 30 && (t.steps_index = 4, t.steps[0][4]
+                              .desc = e.$u.timeFormat(s.delivery.delivery_time, "mm月dd日 hh:MM"))), 30 == s
+                          .order_mode.value && (10 == s.delivery_status.value ? (t.steps_index = 3, t
+                            .steps[0][3].desc = e.$u.timeFormat(s.shop_time, "mm月dd日 hh:MM")) : (t
+                            .steps_index = 4, t.steps[0][3].desc = e.$u.timeFormat(s.delivery_time,
+                              "mm月dd日 hh:MM"), t.steps[0][4].desc = e.$u.timeFormat(s.delivery_time,
+                              "mm月dd日 hh:MM"))), 20 == s.receipt_status.value && (t.steps_index = 5, t
+                            .steps[0][5].desc = e.$u.timeFormat(s.receipt_time, "mm月dd日 hh:MM")))), 20 ==
+                      s.order_status.value) { t.steps[1][0].desc = e.$u.timeFormat(i, "mm月dd日 hh:MM"); var
+                        o = new Date(s.update_time);
+                      o = Date.parse(o), t.steps[1][1].desc = e.$u.timeFormat(o, "mm月dd日 hh:MM"), t
+                        .steps_index = 1 } 40 == s.order_status.value && (t.steps[2][0].desc = e.$u
+                      .timeFormat(i, "mm月dd日 hh:MM"), 20 != s.refund_status.value ? (t.steps_index = 1,
+                        t.steps[2][1].desc = e.$u.timeFormat(s.refund_time, "mm月dd日 hh:MM")) : (t
+                        .steps_index = 2, t.steps[2][1].desc = e.$u.timeFormat(s.refund_time,
+                          "mm月dd日 hh:MM"), t.steps[2][2].desc = e.$u.timeFormat(s.refund_time,
+                          "mm月dd日 hh:MM"))) })) }, cancelOrder: function () { var t = this;
+                e.showModal({ title: "提示", content: "您确认要取消订单？", success: function (e) { e.confirm && s
+                      ._post_form("user.order/cancel", { order_id: t.order_id }, (function (e) { t
+                          .getOrderDetail() })) } }) }, receipt: function () { var t = this;
+                e.showModal({ title: "提示", content: "您确认要完成订单？", success: function (e) { e.confirm && s
+                      ._post_form("user.order/receipt", { order_id: t.order_id }, (function (e) { t
+                          .getOrderDetail() })) } }) }, spk: function (e) { this.spk_box = !1, s._post_form(
+                  "order/spk", { order_id: this.order_id, mode: e }, (function (e) { s.showSuccess(e.msg) })
+                  ) }, getUserDetail: function () { var e = this;
+                s._get("user/detail", {}, (function (t) { e.userInfo = t.data })) }, phone: function (t) { e
+                  .makePhoneCall({ phoneNumber: t }) }, copy: function (e) { r.setClipboardData({ data: e,
+                  success: function (e) {} }) }, goTo: function (e) { s.goTo(e) } } };
+        t.default = i }).call(this, r("df3c")["default"], r("3223")["default"]) } },
+  [
+    ["424a", "common/runtime", "common/vendor"]
+  ]
+]);

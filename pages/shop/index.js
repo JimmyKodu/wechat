@@ -1,1 +1,295 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/shop/index"],{"215d":function(e,o,t){},"2d15":function(e,o,t){"use strict";t.r(o);var s=t("e4f9"),n=t("48c1");for(var r in n)["default"].indexOf(r)<0&&function(e){t.d(o,e,(function(){return n[e]}))}(r);t("ea25");var i=t("828b"),a=Object(i["a"])(n["default"],s["b"],s["c"],!1,null,"77935e2d",null,!1,s["a"],void 0);o["default"]=a.exports},"48c1":function(e,o,t){"use strict";t.r(o);var s=t("f84b"),n=t.n(s);for(var r in s)["default"].indexOf(r)<0&&function(e){t.d(o,e,(function(){return s[e]}))}(r);o["default"]=n.a},"9de8":function(e,o,t){"use strict";(function(e,o){var s=t("47a9");t("8ae9");s(t("3240"));var n=s(t("2d15"));e.__webpack_require_UNI_MP_PLUGIN__=t,o(n.default)}).call(this,t("3223")["default"],t("df3c")["createPage"])},e4f9:function(e,o,t){"use strict";t.d(o,"b",(function(){return n})),t.d(o,"c",(function(){return r})),t.d(o,"a",(function(){return s}));var s={uIcon:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(t.bind(null,"fa8a"))},uFood:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-food/u-food")]).then(t.bind(null,"5c43"))},uTabs:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-tabs/u-tabs")]).then(t.bind(null,"eec9"))},uSticky:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(t.bind(null,"f03c"))},"u-Input":function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u--input/u--input")]).then(t.bind(null,"07cc"))},uPopup:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(t.bind(null,"5f49"))},uButton:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-button/u-button")]).then(t.bind(null,"1750"))},uBadge:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-badge/u-badge")]).then(t.bind(null,"e5e1"))},uRate:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-rate/u-rate")]).then(t.bind(null,"2d16"))},uLoadmore:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-loadmore/u-loadmore")]).then(t.bind(null,"3a02"))},uCellGroup:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(t.bind(null,"d7d3"))},uCell:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(t.bind(null,"243c"))},uModal:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-modal/u-modal")]).then(t.bind(null,"a130"))}},n=function(){var e=this,o=e.$createElement,t=(e._self._c,e.shop&&!e.applet.is_arraign&&0==e.cut?e.category.length:null),s=e.shop&&!e.applet.is_arraign&&1==e.cut?e.cmt_list.data.length:null,n=e.shop&&!e.applet.is_arraign&&1==e.cut&&s?e.__map(e.cmt_list.data,(function(o,t){var s=e.__get_orig(o),n=e.$u.timeFormat(o.create_time);return{$orig:s,g2:n}})):null;e._isMounted||(e.e0=function(o){e.shopRest=!0},e.e1=function(o){e.shopRest=!1},e.e2=function(o){e.show=!1,e.spec_index=0},e.e3=function(o){e.show=!1,e.spec_index=0},e.e4=function(o){e.cart_show=!0},e.e5=function(o){e.cart_show=!1},e.e6=function(o){e.scanCodeShow=!1}),e.$mp.data=Object.assign({},{$root:{g0:t,g1:s,l0:n}})},r=[]},ea25:function(e,o,t){"use strict";var s=t("215d"),n=t.n(s);n.a},f84b:function(e,o,t){"use strict";(function(e){var s=t("47a9");Object.defineProperty(o,"__esModule",{value:!0}),o.default=void 0;var n=s(t("7eb4")),r=s(t("3b2d")),i=s(t("ee10")),a=getApp(),u={data:function(){return{show_open:!1,applet:{},from:"shop",shop:{},table_id:"",table:{},shopRest:!1,order_mode:"",order_tab:[],order_tab_index:0,scanCodeShow:!1,authBox:!1,menu:[{name:"点单"},{name:"评价"},{name:"详情"}],cut:0,scrollTop:0,oldScrollTop:0,itemId:"",current:0,menuHeight:0,menuItemHeight:0,arr:[],scrollRightTop:0,goodslist:{},category:{},order_pay_price:0,pack_price:0,order_total_num:0,order_total_price:0,min_price:0,cart_show:!1,show:!1,goods:null,specData:{},goods_sku_id:"",spec_name:"",goods_price:"",line_price:"",goods_img:"",stock_num:0,goods_spec_arr:[],spec_index:0,goods_detail_show:!1,goods_index:"",goods_index1:"",cmt_list:null,page:1,loadStatus:"loadmore"}},onLoad:function(){var o=this;return(0,i.default)(n.default.mark((function t(){var s,r;return n.default.wrap((function(t){while(1)switch(t.prev=t.next){case 0:return s=o,t.next=3,s.$onLaunched;case 3:if(s.applet=a.getApplet(),s.table_id=e.getStorageSync("table_id")||"",s.order_mode=e.getStorageSync("order_mode")||"",e.removeStorageSync("table_id"),e.removeStorageSync("order_mode"),e.setNavigationBarTitle({title:s.applet.is_arraign?"活动":"点单"}),r=e.getSystemSetting(),r.locationEnabled){t.next=13;break}return a.showError("手机定位模块未开启"),t.abrupt("return",!1);case 13:e.authorize({scope:"scope.userLocation",success:function(){s.authBox=!1,s.getShop()},fail:function(){s.authBox=!0}});case 14:case"end":return t.stop()}}),t)})))()},onShow:function(){this.from=e.getStorageSync("from")||"shop",e.removeStorageSync("from"),this.show_open&&this.getShop()},onReady:function(){this.getMenuItemTop()},onShareTimeline:function(e){return e.from,{title:_this.shop.shop_name,path:"/pages/shop/index"}},methods:{setOrderMode:function(e){this.order_tab_index=e,this.order_mode=this.order_tab[e].value,this.getGoods()},getShop:function(){var o=this;a._get("shop/detail",{},(function(t){if(o.shop=t.data,!o.show_open){for(var s=t.data.order.order_mode.tab,n=t.data.order.order_mode.value,r=[],i=0;i<s.length;i++)1==n[s[i].value].status&&r.push(s[i]);if(o.order_tab=r,o.order_tab_index=0,o.order_mode){for(var a=!0,u=0;u<r.length;u++)o.order_mode==r[u].value&&(o.order_tab_index=u,a=!a);a&&(o.order_mode=r[0].value)}else o.order_mode=r[0].value;e.$u.mpShare.title=o.shop.shop_name,e.$u.mpShare.imageUrl=o.shop.logo,o.show_open=!0}o.getGoods(),o.table_id&&o.getTable()}))},getTable:function(){var e=this;a._get("table/detail",{table_id:e.table_id},(function(o){var t=o.data;e.table=t,20==t.status.value&&"shop"==e.from&&a.goTo("order/detail?id="+t.status.order.list[0].order_id)}))},getGoods:function(){var e=this;a._get("goods/lists",{table_id:e.table_id,order_mode:e.order_mode},(function(o){e.setData(o.data),1==e.goods_detail_show&&(e.goods_detail=o.data.category[e.goods_index].goods[e.goods_index1])}))},minusCount:function(e,o){var t=this,s=t.category[e].goods[o];return 0==t.shop.status?(a.showError("当前门店已休息"),!1):10==t.order_mode&&1==t.shop.order.is_scan&&""==t.table_id?(t.scanCodeShow=!0,!1):20==s.spec_type?(t.specShow(s),!0):(s.total_num>1&&a._post_form("cart/sub",{table_id:t.table_id,goods_id:s.goods_id,goods_sku_id:s.spec[0].spec_sku_id},(function(){s.total_num--,t.goods=s,t.getGoods()})),void(1==s.total_num&&a._post_form("cart/delete",{table_id:t.table_id,goods_id:s.goods_id,goods_sku_id:s.spec[0].spec_sku_id},(function(e){s.total_num--,t.goods=s,t.getGoods()}))))},addCount:function(e,o){var t=this,s=t.category[e].goods[o];return 0==t.shop.status?(a.showError("当前门店已休息"),!1):10==t.order_mode&&1==t.shop.order.is_scan&&""==t.table_id?(t.scanCodeShow=!0,!1):20==s.spec_type?(t.specShow(s),!0):1==t.shop.goods.is_stock&&s.total_num>=s.spec[0].stock_num?(a.showError("库存不足"),!1):void a._post_form("cart/add",{table_id:t.table_id,goods_id:s.goods_id,goods_num:1,goods_sku_id:s.spec[0].spec_sku_id},(function(){s.total_num++,t.goods=s,t.getGoods()}))},specShow:function(e){for(var o,t=0;t<e.specData.spec_attr.length;t++)for(var s=0;s<e.specData.spec_attr[t].spec_items.length;s++)0==s?(e.specData.spec_attr[t].spec_items[0].checked=!0,this.goods_spec_arr[t]=e.specData.spec_attr[t].spec_items[0].item_id):e.specData.spec_attr[t].spec_items[s].checked=!1;o=e.specData;var n=o.spec_list[0],r=e.image.url;""!=n.form.image_url&&(r=n.form.image_url),this.setData({show:!0,goods:e,specData:o,goods_sku_id:n.goods_spec_id,spec_name:n.spec_name,goods_price:n.form.goods_price,line_price:n.form.line_price,goods_img:r,stock_num:n.form.stock_num})},specTap:function(e,o){var t=this.specData;for(var s in t.spec_attr)for(var n in t.spec_attr[s].spec_items)e==s&&(t.spec_attr[s].spec_items[n].checked=!1,o==n&&(t.spec_attr[s].spec_items[o].checked=!0,this.goods_spec_arr[s]=t.spec_attr[s].spec_items[o].item_id));this.specData=t,this.updateSpecGoods()},updateSpecGoods:function(){for(var e,o=this.goods_spec_arr.join("_"),t=this.specData.spec_list,s=0,n="",i=0;i<t.length;i++)if(t[i].spec_sku_id==o){e=t[i],s=i;break}n=""==e.form.image_url?this.goods.image.url:e.form.image_url,"object"===(0,r.default)(e)&&this.setData({goods_sku_id:e.spec_sku_id,spec_name:e.spec_name,goods_price:e.form.goods_price,line_price:e.form.line_price,spec_index:s,goods_img:n,stock_num:e.form.stock_num})},cartCler:function(){var o=this;e.showModal({title:"提示",content:"确定要清空购物车？",success:function(e){e.confirm&&a._get("cart/clearAll",{table_id:o.table_id},(function(e){a.showSuccess(e.msg,(function(){o.cart_show=!1,o.getGoods()}))}))}})},cartUp:function(e){var o=this,t=o.goodslist[e];return 0==o.shop.status?(a.showError("当前门店已休息"),!1):10==o.order_mode&&1==o.shop.order.is_scan&&""==o.table_id?(o.scanCodeShow=!0,!1):1==o.shop.goods.is_stock&&t.total_num>=t.goods_sku.stock_num?(a.showError("库存不足"),!1):void a._post_form("cart/add",{table_id:o.table_id,goods_id:t.goods_id,goods_num:1,goods_sku_id:t.goods_sku_id},(function(){o.getGoods()}))},cartDown:function(e){var o=this,t=o.goodslist[e];return 0==o.shop.status?(a.showError("当前门店已休息"),!1):10==o.order_mode&&1==o.shop.order.is_scan&&""==o.table_id?(o.scanCodeShow=!0,!1):(t.total_num>1&&a._post_form("cart/sub",{table_id:o.table_id,goods_id:t.goods_id,goods_sku_id:t.goods_sku_id},(function(){o.getGoods()})),void(1==t.total_num&&a._post_form("cart/delete",{table_id:o.table_id,goods_id:t.goods_id,goods_sku_id:t.goods_sku_id},(function(e){o.getGoods()}))))},cart_input:function(e){var o=this,t=o.goods_index,s=o.goods_index1;if(!e||""==t&&""==s)return!1;if(0==o.shop.status)return a.showError("当前门店已休息"),!1;if(10==o.order_mode&&1==o.shop.order.is_scan&&""==o.table_id)return o.scanCodeShow=!0,!1;if(1==o.shop.goods.is_stock&&n.total_num>=n.goods_sku.stock_num)return a.showError("库存不足"),!1;var n=o.category[t].goods[s];a._post_form("cart/edit",{table_id:o.table_id,goods_id:n.goods_id,goods_num:e,goods_sku_id:n.spec[0].spec_sku_id},(function(){n.total_num=e,o.goods=n,o.getGoods()}))},cart_focus:function(e,o){var t=this.category[e].goods[o];return this.goods_index=e,this.goods_index1=o,0==this.shop.status?(a.showError("当前门店已休息"),!1):10==this.order_mode&&1==this.shop.order.is_scan&&""==this.table_id?(this.scanCodeShow=!0,!1):1==this.shop.goods.is_stock&&t.total_num>=t.goods_sku.stock_num?(a.showError("库存不足"),!1):void 0},cart_blur:function(){this.goods_index="",this.goods_index1=""},up:function(){var e=this,o=e.spec_index,t=e.goods;return 0==e.shop.status?(a.showError("当前门店已休息"),!1):10==e.order_mode&&1==e.shop.order.is_scan&&""==e.table_id?(e.scanCodeShow=!0,!1):1==e.shop.goods.is_stock&&t.spec[o].sell_num>=t.spec[o].stock_num?(a.showError("库存不足"),!1):void a._post_form("cart/add",{table_id:e.table_id,goods_id:t.goods_id,goods_num:1,goods_sku_id:t.spec[o].spec_sku_id},(function(){t.spec[o].sell_num++,t.total_num++,e.goods=t,e.getGoods()}))},down:function(){var e=this,o=e.spec_index,t=e.goods;return 0==e.shop.status?(a.showError("当前门店已休息"),!1):10==e.order_mode&&1==e.shop.order.is_scan&&""==e.table_id?(e.scanCodeShow=!0,!1):(t.spec[o].sell_num>1&&a._post_form("cart/sub",{table_id:e.table_id,goods_id:t.goods_id,goods_sku_id:t.spec[o].spec_sku_id},(function(){t.spec[o].sell_num--,t.total_num--,e.goods=t,e.getGoods()})),void(1==t.spec[o].sell_num&&a._post_form("cart/delete",{table_id:e.table_id,goods_id:t.goods_id,goods_sku_id:t.spec[o].spec_sku_id},(function(s){t.spec[o].sell_num--,t.total_num--,e.goods=t,e.getGoods()}))))},setGoodsDetailShow:function(o,t){var s=this.category[o].goods[t];this.goods=s,this.goods_index=o,this.goods_index1=t,this.goods_detail_show=!0,e.$u.mpShare.title=s.goods_name+" - "+this.shop.shop_name,e.$u.mpShare.imageUrl=s.image.url},setGoodsDetailClose:function(){this.goods_detail_show=!1,e.$u.mpShare.title=this.shop.shop_name,e.$u.mpShare.imageUrl=this.shop.logo},gotoCart:function(){var e=this.order_mode;if(20==e&&0!=this.min_price)return!1;var o="?order_mode="+e+"&table_id="+this.table_id;return a.goTo("shop/checkout"+o),!1},menuTab:function(e){this.cut=e.index,1==e.index&&(this.page=1,this.getCmtList())},getCmtList:function(){var e=this;a._get("comment/lists",{page:e.page},(function(o){var t=o.data;1==e.page?e.cmt_list=t:(dataList=e.cmt_list,e.cmt_list.data=dataList.data.concat(t.data)),e.loadStatus="loadmore"}))},cmtReachBottom:function(){if(this.loadStatus="loading",this.page>=this.cmt_list.last_page)return this.loadStatus="nomore",!1;++this.page,this.getCmtList()},phone:function(o){e.makePhoneCall({phoneNumber:o})},removeTable:function(){var o=this;e.showModal({title:"提示",content:"您确定要清除餐桌信息?",success:function(e){e.confirm&&(o.table_id="")}})},openLocation:function(){var o=this.shop.coordinate;o=o.split(","),e.openLocation({latitude:Number(o[0]),longitude:Number(o[1]),name:this.shop.shop_name,address:this.shop.address,success:function(){}})},previewImage:function(o){var t=this.shop[o];if(""==t)return a.showError("图片不存在"),!1;e.previewImage({urls:[t]})},swichMenu:function(e){var o=this;return(0,i.default)(n.default.mark((function t(){var s;return n.default.wrap((function(t){while(1)switch(t.prev=t.next){case 0:if(s=o,0!=s.arr.length){t.next=4;break}return t.next=4,s.getMenuItemTop();case 4:if(e!=s.current){t.next=6;break}return t.abrupt("return");case 6:s.scrollRightTop=s.oldScrollTop,s.$nextTick((function(){s.scrollRightTop=s.arr[e],s.current=e,s.leftMenuStatus(e)}));case 8:case"end":return t.stop()}}),t)})))()},getMenuItemTop:function(){var o=this;new Promise((function(t){var s=e.createSelectorQuery();s.selectAll(".class-item").boundingClientRect((function(e){e.length?e.forEach((function(s){o.arr.push(s.top-e[0].top),t()})):setTimeout((function(){o.getMenuItemTop()}),10)})).exec()}))},leftMenuStatus:function(e){var o=this;return(0,i.default)(n.default.mark((function t(){return n.default.wrap((function(t){while(1)switch(t.prev=t.next){case 0:if(o.current=e,0!=o.menuHeight&&0!=o.menuItemHeight){t.next=6;break}return t.next=4,o.getElRect("menu-scroll-view","menuHeight");case 4:return t.next=6,o.getElRect("tab-item","menuItemHeight");case 6:o.scrollTop=e*o.menuItemHeight+o.menuItemHeight/2-o.menuHeight/2;case 7:case"end":return t.stop()}}),t)})))()},getElRect:function(o,t){var s=this;new Promise((function(n,r){var i=e.createSelectorQuery().in(s);i.select("."+o).fields({size:!0},(function(e){e?(s[t]=e.height,n()):setTimeout((function(){s.getElRect(o)}),10)})).exec()}))},rightScroll:function(e){var o=this;return(0,i.default)(n.default.mark((function t(){var s;return n.default.wrap((function(t){while(1)switch(t.prev=t.next){case 0:if(s=o,s.oldScrollTop=e.detail.scrollTop,0!=o.arr.length){t.next=5;break}return t.next=5,o.getMenuItemTop();case 5:if(o.menuHeight){t.next=8;break}return t.next=8,o.getElRect("menu-scroll-view","menuHeight");case 8:setTimeout((function(){for(var t=e.detail.scrollTop,s=0;s<o.arr.length;s++){var n=o.arr[s],r=o.arr[s+1];if(!r||t>=n&&t<r)return void o.leftMenuStatus(s)}}),10);case 9:case"end":return t.stop()}}),t)})))()},observer:function(){var o=this;return(0,i.default)(n.default.mark((function t(){return n.default.wrap((function(t){while(1)switch(t.prev=t.next){case 0:o.tabbar.map((function(t,s){var n=e.createIntersectionObserver(o);n.relativeTo(".right-box",{top:0}).observe("#item"+s,(function(e){if(e.intersectionRatio>0){var t=e.id.substring(4);o.leftMenuStatus(t)}}))}));case 1:case"end":return t.stop()}}),t)})))()},scanCode:function(){var o=this;o.scanCodeShow=!1,e.scanCode({onlyFromCamera:!0,scanType:["qrCode"],success:function(e){if("scanCode:ok"==e.errMsg){var t="";"QR_CODE"==e.scanType&&(t=e.result,t=t.split("/scene/"),t=t[1]),"WX_CODE"==e.scanType&&(t=e.path,t=t.split("scene="),t=t[1]),"QR"==e.scanType&&(t=e.path,t=t.split("scene="),t=t[1]);var s=t.split("-");"applet"==s[0]||"shop"==s[0]?o.getShop():"table"==s[0]?(o.table_id=s[1],o.getShop()):"sn"==s[0]?a._get("qrcode/detail",{id:s[1]},(function(e){30==e.data.type.value?(o.table_id=e.data.table_id,o.getShop()):20==e.data.type.value||10==e.data.type.value?o.getShop():a.showError("不是合法的二维码")})):a.showError("不是合法的二维码")}else a.showError("扫码失败")}})}}};o.default=u}).call(this,t("df3c")["default"])}},[["9de8","common/runtime","common/vendor"]]]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+  ["pages/shop/index"], { "215d": function (e, o, t) {}, "2d15": function (e, o, t) { "use strict";
+      t.r(o); var s = t("e4f9"),
+        n = t("48c1"); for (var r in n)["default"].indexOf(r) < 0 && function (e) { t.d(o, e, (
+      function () { return n[e] })) }(r);
+      t("ea25"); var i = t("828b"),
+        a = Object(i["a"])(n["default"], s["b"], s["c"], !1, null, "77935e2d", null, !1, s["a"], void 0);
+      o["default"] = a.exports }, "48c1": function (e, o, t) { "use strict";
+      t.r(o); var s = t("f84b"),
+        n = t.n(s); for (var r in s)["default"].indexOf(r) < 0 && function (e) { t.d(o, e, (
+      function () { return s[e] })) }(r);
+      o["default"] = n.a }, "9de8": function (e, o, t) { "use strict";
+      (function (e, o) { var s = t("47a9");
+        t("8ae9");
+        s(t("3240")); var n = s(t("2d15"));
+        e.__webpack_require_UNI_MP_PLUGIN__ = t, o(n.default) }).call(this, t("3223")["default"], t("df3c")[
+        "createPage"]) }, e4f9: function (e, o, t) { "use strict";
+      t.d(o, "b", (function () { return n })), t.d(o, "c", (function () { return r })), t.d(o, "a", (
+    function () { return s })); var s = { uIcon: function () { return Promise.all([t.e("common/vendor"), t.e(
+              "uni_modules/uview-ui/components/u-icon/u-icon")]).then(t.bind(null, "fa8a")) },
+      uFood: function () { return Promise.all([t.e("common/vendor"), t.e(
+              "uni_modules/uview-ui/components/u-food/u-food")]).then(t.bind(null, "5c43")) },
+      uTabs: function () { return Promise.all([t.e("common/vendor"), t.e(
+              "uni_modules/uview-ui/components/u-tabs/u-tabs")]).then(t.bind(null, "eec9")) },
+        uSticky: function () { return Promise.all([t.e("common/vendor"), t.e(
+              "uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(t.bind(null,
+            "f03c")) }, "u-Input": function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u--input/u--input")]).then(t.bind(null, "07cc")) },
+          uPopup: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-popup/u-popup")]).then(t.bind(null, "5f49")) },
+          uButton: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-button/u-button")]).then(t.bind(null, "1750")) },
+          uBadge: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-badge/u-badge")]).then(t.bind(null, "e5e1")) },
+          uRate: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-rate/u-rate")]).then(t.bind(null, "2d16")) },
+          uLoadmore: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-loadmore/u-loadmore")]).then(t.bind(null, "3a02")) },
+          uCellGroup: function () { return Promise.all([t.e("common/vendor"), t.e(
+              "uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(t.bind(null, "d7d3")) },
+          uCell: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-cell/u-cell")]).then(t.bind(null, "243c")) },
+          uModal: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-modal/u-modal")]).then(t.bind(null, "a130")) } },
+        n = function () { var e = this,
+            o = e.$createElement,
+            t = (e._self._c, e.shop && !e.applet.is_arraign && 0 == e.cut ? e.category.length : null),
+            s = e.shop && !e.applet.is_arraign && 1 == e.cut ? e.cmt_list.data.length : null,
+            n = e.shop && !e.applet.is_arraign && 1 == e.cut && s ? e.__map(e.cmt_list.data, (function (o,
+            t) { var s = e.__get_orig(o),
+                n = e.$u.timeFormat(o.create_time); return { $orig: s, g2: n } })) : null;
+          e._isMounted || (e.e0 = function (o) { e.shopRest = !0 }, e.e1 = function (o) { e.shopRest = !1 }, e
+            .e2 = function (o) { e.show = !1, e.spec_index = 0 }, e.e3 = function (o) { e.show = !1, e
+                .spec_index = 0 }, e.e4 = function (o) { e.cart_show = !0 }, e.e5 = function (o) { e
+                .cart_show = !1 }, e.e6 = function (o) { e.scanCodeShow = !1 }), e.$mp.data = Object
+        .assign({}, { $root: { g0: t, g1: s, l0: n } }) },
+        r = [] }, ea25: function (e, o, t) { "use strict"; var s = t("215d"),
+        n = t.n(s);
+      n.a }, f84b: function (e, o, t) { "use strict";
+      (function (e) { var s = t("47a9");
+        Object.defineProperty(o, "__esModule", { value: !0 }), o.default = void 0; var n = s(t("7eb4")),
+          r = s(t("3b2d")),
+          i = s(t("ee10")),
+          a = getApp(),
+          u = { data: function () { return { show_open: !1, applet: {}, from: "shop", shop: {}, table_id: "",
+                table: {}, shopRest: !1, order_mode: "", order_tab: [], order_tab_index: 0, scanCodeShow: !1,
+                authBox: !1, menu: [{ name: "点单" }, { name: "评价" }, { name: "详情" }], cut: 0, scrollTop: 0,
+                oldScrollTop: 0, itemId: "", current: 0, menuHeight: 0, menuItemHeight: 0, arr: [],
+                scrollRightTop: 0, goodslist: {}, category: {}, order_pay_price: 0, pack_price: 0,
+                order_total_num: 0, order_total_price: 0, min_price: 0, cart_show: !1, show: !1, goods: null,
+                specData: {}, goods_sku_id: "", spec_name: "", goods_price: "", line_price: "", goods_img: "",
+                stock_num: 0, goods_spec_arr: [], spec_index: 0, goods_detail_show: !1, goods_index: "",
+                goods_index1: "", cmt_list: null, page: 1, loadStatus: "loadmore" } }, onLoad: function () { var
+                o = this; return (0, i.default)(n.default.mark((function t() { var s, r; return n.default
+                  .wrap((function (t) { while (1) switch (t.prev = t.next) {
+                      case 0:
+                        return s = o, t.next = 3, s.$onLaunched;
+                      case 3:
+                        if (s.applet = a.getApplet(), s.table_id = e.getStorageSync(
+                          "table_id") || "", s.order_mode = e.getStorageSync("order_mode") ||
+                          "", e.removeStorageSync("table_id"), e.removeStorageSync(
+                          "order_mode"), e.setNavigationBarTitle({ title: s.applet.is_arraign ?
+                              "活动" : "点单" }), r = e.getSystemSetting(), r.locationEnabled) { t
+                            .next = 13; break } return a.showError("手机定位模块未开启"), t.abrupt(
+                          "return", !1);
+                      case 13:
+                        e.authorize({ scope: "scope.userLocation", success: function () { s
+                              .authBox = !1, s.getShop() }, fail: function () { s
+                              .authBox = !0 } });
+                      case 14:
+                      case "end":
+                        return t.stop() } }), t) })))() }, onShow: function () { this.from = e.getStorageSync(
+                "from") || "shop", e.removeStorageSync("from"), this.show_open && this.getShop() },
+            onReady: function () { this.getMenuItemTop() }, onShareTimeline: function (e) { return e
+              .from, { title: _this.shop.shop_name, path: "/pages/shop/index" } },
+            methods: { setOrderMode: function (e) { this.order_tab_index = e, this.order_mode = this.order_tab[
+                    e].value, this.getGoods() }, getShop: function () { var o = this;
+                a._get("shop/detail", {}, (function (t) { if (o.shop = t.data, !o.show_open) { for (var s = t
+                        .data.order.order_mode.tab, n = t.data.order.order_mode.value, r = [], i =
+                        0; i < s.length; i++) 1 == n[s[i].value].status && r.push(s[i]); if (o
+                      .order_tab = r, o.order_tab_index = 0, o.order_mode) { for (var a = !0, u = 0; u <
+                        r.length; u++) o.order_mode == r[u].value && (o.order_tab_index = u, a = !a);
+                      a && (o.order_mode = r[0].value) } else o.order_mode = r[0].value;
+                    e.$u.mpShare.title = o.shop.shop_name, e.$u.mpShare.imageUrl = o.shop.logo, o
+                      .show_open = !0 } o.getGoods(), o.table_id && o.getTable() })) },
+          getTable: function () { var e = this;
+                a._get("table/detail", { table_id: e.table_id }, (function (o) { var t = o.data;
+                  e.table = t, 20 == t.status.value && "shop" == e.from && a.goTo("order/detail?id=" + t
+                    .status.order.list[0].order_id) })) }, getGoods: function () { var e = this;
+                a._get("goods/lists", { table_id: e.table_id, order_mode: e.order_mode }, (function (o) { e
+                    .setData(o.data), 1 == e.goods_detail_show && (e.goods_detail = o.data.category[e
+                      .goods_index].goods[e.goods_index1]) })) }, minusCount: function (e, o) { var t = this,
+                  s = t.category[e].goods[o]; return 0 == t.shop.status ? (a.showError("当前门店已休息"), !1) : 10 ==
+                  t.order_mode && 1 == t.shop.order.is_scan && "" == t.table_id ? (t.scanCodeShow = !0, !1) :
+                  20 == s.spec_type ? (t.specShow(s), !0) : (s.total_num > 1 && a._post_form(
+                  "cart/sub", { table_id: t.table_id, goods_id: s.goods_id, goods_sku_id: s.spec[0]
+                      .spec_sku_id }, (function () { s.total_num--, t.goods = s, t.getGoods() })), void(1 ==
+                    s.total_num && a._post_form("cart/delete", { table_id: t.table_id, goods_id: s.goods_id,
+                      goods_sku_id: s.spec[0].spec_sku_id }, (function (e) { s.total_num--, t.goods = s, t
+                        .getGoods() })))) }, addCount: function (e, o) { var t = this,
+                  s = t.category[e].goods[o]; return 0 == t.shop.status ? (a.showError("当前门店已休息"), !1) : 10 ==
+                  t.order_mode && 1 == t.shop.order.is_scan && "" == t.table_id ? (t.scanCodeShow = !0, !1) :
+                  20 == s.spec_type ? (t.specShow(s), !0) : 1 == t.shop.goods.is_stock && s.total_num >= s
+                  .spec[0].stock_num ? (a.showError("库存不足"), !1) : void a._post_form("cart/add", { table_id: t
+                        .table_id, goods_id: s.goods_id, goods_num: 1, goods_sku_id: s.spec[0].spec_sku_id },
+                    (function () { s.total_num++, t.goods = s, t.getGoods() })) }, specShow: function (
+              e) { for (var o, t = 0; t < e.specData.spec_attr.length; t++)
+                  for (var s = 0; s < e.specData.spec_attr[t].spec_items.length; s++) 0 == s ? (e.specData
+                    .spec_attr[t].spec_items[0].checked = !0, this.goods_spec_arr[t] = e.specData.spec_attr[
+                      t].spec_items[0].item_id) : e.specData.spec_attr[t].spec_items[s].checked = !1;
+                o = e.specData; var n = o.spec_list[0],
+                  r = e.image.url; "" != n.form.image_url && (r = n.form.image_url), this.setData({ show: !0,
+                  goods: e, specData: o, goods_sku_id: n.goods_spec_id, spec_name: n.spec_name,
+                  goods_price: n.form.goods_price, line_price: n.form.line_price, goods_img: r,
+                  stock_num: n.form.stock_num }) }, specTap: function (e, o) { var t = this.specData; for (var
+                    s in t.spec_attr)
+                  for (var n in t.spec_attr[s].spec_items) e == s && (t.spec_attr[s].spec_items[n].checked = !
+                    1, o == n && (t.spec_attr[s].spec_items[o].checked = !0, this.goods_spec_arr[s] = t
+                      .spec_attr[s].spec_items[o].item_id));
+                this.specData = t, this.updateSpecGoods() }, updateSpecGoods: function () { for (var e, o = this
+                    .goods_spec_arr.join("_"), t = this.specData.spec_list, s = 0, n = "", i = 0; i < t
+                  .length; i++)
+                  if (t[i].spec_sku_id == o) { e = t[i], s = i; break } n = "" == e.form.image_url ? this
+                  .goods.image.url : e.form.image_url, "object" === (0, r.default)(e) && this
+                .setData({ goods_sku_id: e.spec_sku_id, spec_name: e.spec_name, goods_price: e.form
+                      .goods_price, line_price: e.form.line_price, spec_index: s, goods_img: n, stock_num: e
+                      .form.stock_num }) }, cartCler: function () { var o = this;
+                e.showModal({ title: "提示", content: "确定要清空购物车？", success: function (e) { e.confirm && a._get(
+                      "cart/clearAll", { table_id: o.table_id }, (function (e) { a.showSuccess(e.msg,
+                          (function () { o.cart_show = !1, o.getGoods() })) })) } }) }, cartUp: function (
+              e) { var o = this,
+                  t = o.goodslist[e]; return 0 == o.shop.status ? (a.showError("当前门店已休息"), !1) : 10 == o
+                  .order_mode && 1 == o.shop.order.is_scan && "" == o.table_id ? (o.scanCodeShow = !0, !1) :
+                  1 == o.shop.goods.is_stock && t.total_num >= t.goods_sku.stock_num ? (a.showError("库存不足"), !
+                    1) : void a._post_form("cart/add", { table_id: o.table_id, goods_id: t.goods_id,
+                    goods_num: 1, goods_sku_id: t.goods_sku_id }, (function () { o.getGoods() })) },
+              cartDown: function (e) { var o = this,
+                    t = o.goodslist[e]; return 0 == o.shop.status ? (a.showError("当前门店已休息"), !1) : 10 == o
+                    .order_mode && 1 == o.shop.order.is_scan && "" == o.table_id ? (o.scanCodeShow = !0, !1) : (
+                      t.total_num > 1 && a._post_form("cart/sub", { table_id: o.table_id, goods_id: t.goods_id,
+                        goods_sku_id: t.goods_sku_id }, (function () { o.getGoods() })), void(1 == t
+                        .total_num && a._post_form("cart/delete", { table_id: o.table_id, goods_id: t.goods_id,
+                          goods_sku_id: t.goods_sku_id }, (function (e) { o.getGoods() })))) },
+              cart_input: function (e) { var o = this,
+                    t = o.goods_index,
+                    s = o.goods_index1; if (!e || "" == t && "" == s) return !1; if (0 == o.shop.status)
+                  return a.showError("当前门店已休息"), !1; if (10 == o.order_mode && 1 == o.shop.order.is_scan &&
+                    "" == o.table_id) return o.scanCodeShow = !0, !1; if (1 == o.shop.goods.is_stock && n
+                    .total_num >= n.goods_sku.stock_num) return a.showError("库存不足"), !1; var n = o.category[t]
+                    .goods[s];
+                  a._post_form("cart/edit", { table_id: o.table_id, goods_id: n.goods_id, goods_num: e,
+                    goods_sku_id: n.spec[0].spec_sku_id }, (function () { n.total_num = e, o.goods = n, o
+                      .getGoods() })) }, cart_focus: function (e, o) { var t = this.category[e].goods[
+                o]; return this.goods_index = e, this.goods_index1 = o, 0 == this.shop.status ? (a.showError(
+                    "当前门店已休息"), !1) : 10 == this.order_mode && 1 == this.shop.order.is_scan && "" == this
+                  .table_id ? (this.scanCodeShow = !0, !1) : 1 == this.shop.goods.is_stock && t.total_num >= t
+                  .goods_sku.stock_num ? (a.showError("库存不足"), !1) : void 0 }, cart_blur: function () { this
+                  .goods_index = "", this.goods_index1 = "" }, up: function () { var e = this,
+                  o = e.spec_index,
+                  t = e.goods; return 0 == e.shop.status ? (a.showError("当前门店已休息"), !1) : 10 == e
+                  .order_mode && 1 == e.shop.order.is_scan && "" == e.table_id ? (e.scanCodeShow = !0, !1) :
+                  1 == e.shop.goods.is_stock && t.spec[o].sell_num >= t.spec[o].stock_num ? (a.showError(
+                    "库存不足"), !1) : void a._post_form("cart/add", { table_id: e.table_id, goods_id: t.goods_id,
+                    goods_num: 1, goods_sku_id: t.spec[o].spec_sku_id }, (function () { t.spec[o]
+                      .sell_num++, t.total_num++, e.goods = t, e.getGoods() })) }, down: function () { var e =
+                  this,
+                  o = e.spec_index,
+                  t = e.goods; return 0 == e.shop.status ? (a.showError("当前门店已休息"), !1) : 10 == e
+                  .order_mode && 1 == e.shop.order.is_scan && "" == e.table_id ? (e.scanCodeShow = !0, !1) : (
+                    t.spec[o].sell_num > 1 && a._post_form("cart/sub", { table_id: e.table_id, goods_id: t
+                        .goods_id, goods_sku_id: t.spec[o].spec_sku_id }, (function () { t.spec[o]
+                        .sell_num--, t.total_num--, e.goods = t, e.getGoods() })), void(1 == t.spec[o]
+                      .sell_num && a._post_form("cart/delete", { table_id: e.table_id, goods_id: t.goods_id,
+                        goods_sku_id: t.spec[o].spec_sku_id }, (function (s) { t.spec[o].sell_num--, t
+                          .total_num--, e.goods = t, e.getGoods() })))) }, setGoodsDetailShow: function (o,
+              t) { var s = this.category[o].goods[t];
+                this.goods = s, this.goods_index = o, this.goods_index1 = t, this.goods_detail_show = !0, e.$u
+                  .mpShare.title = s.goods_name + " - " + this.shop.shop_name, e.$u.mpShare.imageUrl = s.image
+                  .url }, setGoodsDetailClose: function () { this.goods_detail_show = !1, e.$u.mpShare.title =
+                  this.shop.shop_name, e.$u.mpShare.imageUrl = this.shop.logo }, gotoCart: function () { var e =
+                  this.order_mode; if (20 == e && 0 != this.min_price) return !1; var o = "?order_mode=" + e +
+                  "&table_id=" + this.table_id; return a.goTo("shop/checkout" + o), !1 }, menuTab: function (
+              e) { this.cut = e.index, 1 == e.index && (this.page = 1, this.getCmtList()) },
+              getCmtList: function () { var e = this;
+                  a._get("comment/lists", { page: e.page }, (function (o) { var t = o.data;
+                    1 == e.page ? e.cmt_list = t : (dataList = e.cmt_list, e.cmt_list.data = dataList.data
+                      .concat(t.data)), e.loadStatus = "loadmore" })) }, cmtReachBottom: function () { if (this
+                  .loadStatus = "loading", this.page >= this.cmt_list.last_page) return this.loadStatus =
+                  "nomore", !1;++this.page, this.getCmtList() }, phone: function (o) { e
+              .makePhoneCall({ phoneNumber: o }) }, removeTable: function () { var o = this;
+                e.showModal({ title: "提示", content: "您确定要清除餐桌信息?", success: function (e) { e.confirm && (o
+                      .table_id = "") } }) }, openLocation: function () { var o = this.shop.coordinate;
+                o = o.split(","), e.openLocation({ latitude: Number(o[0]), longitude: Number(o[1]), name: this
+                    .shop.shop_name, address: this.shop.address, success: function () {} }) },
+              previewImage: function (o) { var t = this.shop[o]; if ("" == t) return a.showError("图片不存在"), !1;
+                  e.previewImage({ urls: [t] }) }, swichMenu: function (e) { var o = this; return (0, i.default)
+                  (n.default.mark((function t() { var s; return n.default.wrap((function (t) { while (1)
+                        switch (t.prev = t.next) {
+                          case 0:
+                            if (s = o, 0 != s.arr.length) { t.next = 4; break } return t.next = 4,
+                              s.getMenuItemTop();
+                          case 4:
+                            if (e != s.current) { t.next = 6; break } return t.abrupt("return");
+                          case 6:
+                            s.scrollRightTop = s.oldScrollTop, s.$nextTick((function () { s
+                                .scrollRightTop = s.arr[e], s.current = e, s.leftMenuStatus(
+                                  e) }));
+                          case 8:
+                          case "end":
+                            return t.stop() } }), t) })))() }, getMenuItemTop: function () { var o = this;
+                new Promise((function (t) { var s = e.createSelectorQuery();
+                  s.selectAll(".class-item").boundingClientRect((function (e) { e.length ? e.forEach((
+                      function (s) { o.arr.push(s.top - e[0].top), t() })) : setTimeout((
+                      function () { o.getMenuItemTop() }), 10) })).exec() })) }, leftMenuStatus: function (
+              e) { var o = this; return (0, i.default)(n.default.mark((function t() { return n.default.wrap((
+                    function (t) { while (1) switch (t.prev = t.next) {
+                        case 0:
+                          if (o.current = e, 0 != o.menuHeight && 0 != o.menuItemHeight) { t
+                              .next = 6; break } return t.next = 4, o.getElRect(
+                            "menu-scroll-view", "menuHeight");
+                        case 4:
+                          return t.next = 6, o.getElRect("tab-item", "menuItemHeight");
+                        case 6:
+                          o.scrollTop = e * o.menuItemHeight + o.menuItemHeight / 2 - o
+                            .menuHeight / 2;
+                        case 7:
+                        case "end":
+                          return t.stop() } }), t) })))() }, getElRect: function (o, t) { var s = this;
+                new Promise((function (n, r) { var i = e.createSelectorQuery().in(s);
+                  i.select("." + o).fields({ size: !0 }, (function (e) { e ? (s[t] = e.height, n()) :
+                      setTimeout((function () { s.getElRect(o) }), 10) })).exec() })) }, rightScroll: function (
+                e) { var o = this; return (0, i.default)(n.default.mark((function t() { var s; return n
+                    .default.wrap((function (t) { while (1) switch (t.prev = t.next) {
+                        case 0:
+                          if (s = o, s.oldScrollTop = e.detail.scrollTop, 0 != o.arr.length) { t
+                              .next = 5; break } return t.next = 5, o.getMenuItemTop();
+                        case 5:
+                          if (o.menuHeight) { t.next = 8; break } return t.next = 8, o
+                            .getElRect("menu-scroll-view", "menuHeight");
+                        case 8:
+                          setTimeout((function () { for (var t = e.detail.scrollTop, s = 0; s <
+                              o.arr.length; s++) { var n = o.arr[s],
+                                r = o.arr[s + 1]; if (!r || t >= n && t < r) return void o
+                                .leftMenuStatus(s) } }), 10);
+                        case 9:
+                        case "end":
+                          return t.stop() } }), t) })))() }, observer: function () { var o = this; return (0, i
+                  .default)(n.default.mark((function t() { return n.default.wrap((function (t) { while (1)
+                      switch (t.prev = t.next) {
+                        case 0:
+                          o.tabbar.map((function (t, s) { var n = e.createIntersectionObserver(
+                              o);
+                            n.relativeTo(".right-box", { top: 0 }).observe("#item" + s, (
+                              function (e) { if (e.intersectionRatio > 0) { var t = e
+                                    .id.substring(4);
+                                  o.leftMenuStatus(t) } })) }));
+                        case 1:
+                        case "end":
+                          return t.stop() } }), t) })))() }, scanCode: function () { var o = this;
+                o.scanCodeShow = !1, e.scanCode({ onlyFromCamera: !0, scanType: ["qrCode"],
+                  success: function (e) { if ("scanCode:ok" == e.errMsg) { var t = ""; "QR_CODE" == e
+                          .scanType && (t = e.result, t = t.split("/scene/"), t = t[1]), "WX_CODE" == e
+                          .scanType && (t = e.path, t = t.split("scene="), t = t[1]), "QR" == e
+                          .scanType && (t = e.path, t = t.split("scene="), t = t[1]); var s = t.split(
+                        "-"); "applet" == s[0] || "shop" == s[0] ? o.getShop() : "table" == s[0] ? (o
+                            .table_id = s[1], o.getShop()) : "sn" == s[0] ? a._get(
+                          "qrcode/detail", { id: s[1] }, (function (e) { 30 == e.data.type.value ? (o
+                                .table_id = e.data.table_id, o.getShop()) : 20 == e.data.type.value ||
+                              10 == e.data.type.value ? o.getShop() : a.showError("不是合法的二维码") })) : a
+                          .showError("不是合法的二维码") } else a.showError("扫码失败") } }) } } };
+        o.default = u }).call(this, t("df3c")["default"]) } },
+  [
+    ["9de8", "common/runtime", "common/vendor"]
+  ]
+]);

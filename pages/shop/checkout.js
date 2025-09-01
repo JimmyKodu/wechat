@@ -1,1 +1,120 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/shop/checkout"],{"2f77":function(e,o,r){"use strict";r.d(o,"b",(function(){return n})),r.d(o,"c",(function(){return i})),r.d(o,"a",(function(){return t}));var t={uIcon:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(r.bind(null,"fa8a"))},uAlert:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-alert/u-alert")]).then(r.bind(null,"6a6a"))},uButton:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-button/u-button")]).then(r.bind(null,"1750"))},"u-Input":function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u--input/u--input")]).then(r.bind(null,"07cc"))},uTag:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-tag/u-tag")]).then(r.bind(null,"160e"))},uPopup:function(){return Promise.all([r.e("common/vendor"),r.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(r.bind(null,"5f49"))}},n=function(){var e=this,o=e.$createElement,r=(e._self._c,e.gift?e.goods_list.length:null),t=!e.coupon_user_id&&e.coupon_list?e.coupon_list.length:null,n=Number(e.userInfo.money),i=Number(e.order_pay_price),u=Number(e.userInfo.money),a=Number(e.order_pay_price),s=Number(e.userInfo.money),d=Number(e.order_pay_price),c=Number(e.userInfo.money),p=Number(e.order_pay_price);e._isMounted||(e.e0=function(o){e.peopleShow=!0},e.e1=function(o){e.coupon_list&&(e.coupon_show=!0)},e.e2=function(o){e.cashier_show=!1},e.e3=function(o){e.coupon_show=!1}),e.$mp.data=Object.assign({},{$root:{g0:r,g1:t,m0:n,m1:i,m2:u,m3:a,m4:s,m5:d,m6:c,m7:p}})},i=[]},"41c9":function(e,o,r){"use strict";(function(e){Object.defineProperty(o,"__esModule",{value:!0}),o.default=void 0;var r=getApp(),t={data:function(){return{applet:{},shop:{},order_mode:"",table_id:0,mp:"",userInfo:{},flavorList:null,flavor:"",tpl:null,is_order:1,table_name:"",peopleShow:!1,people:"",cashier_show:!1,after_pay:0,pay_mode:1,message:"",coupon_user_id:0,coupon_show:!1,goods_list:[],coupon_list:null,gift:null,address:null,order_pay_price:"0.00",order_total_num:0,order_total_price:"0.00",min_price:"0.00",activity_price:"0.00",delivery_price:"0.00",vip_price:"0.00",pack_price:"0.00",ware_price:"0.00",free_delivery:!1,intra_region:!1,has_error:!1,error_msg:""}},props:{},onLoad:function(e){var o=r.getApplet();this.applet=o,this.table_id=e.table_id||0,this.order_mode=e.order_mode,this.getShop(),this.mp="weixin",this.getTpl()},onShow:function(){this.getCartOrder(),this.getUserDetail()},methods:{setCashier:function(){if(20==this.order_mode){if(null==this.address)return r.showError("请添加一个收货地址"),!1;if(this.intra_region)return r.showError("收货地址超出配送范围"),!1}this.cashier_show=!0},setOrderMode:function(e){this.order_mode=e,this.getCartOrder()},getShop:function(){var e=this;r._get("shop/detail",{},(function(o){e.shop=o.data,e.after_pay=e.shop.order.after_pay,1==e.shop.order.is_flavor&&e.getFlavor()}))},getCartOrder:function(){var e=this,o={order_mode:e.order_mode,coupon_user_id:e.coupon_user_id,table_id:e.table_id,people:e.people};r._get("order/cart",o,(function(o){(function(o){var t=o.data.goods_list;if(0==t.length&&e.goTo("order/index"),1!==o.code)return r.showError(o.msg),!1;o.data.has_error&&r.showError(o.data.error_msg),e.setData(o.data),10==e.order_mode&&e.table_id>0&&(1!=o.data.is_order||1!=e.shop.order.is_people||e.people||(e.peopleShow=!0))})(o)}))},getUserDetail:function(){var e=this;r._get("user/detail",{},(function(o){e.userInfo=o.data}))},getFlavor:function(){var e=this;r._get("order/flavor",{},(function(o){e.flavorList=o.data}))},setFlavor:function(e){var o=this.flavorList,r="";o[e].checked=!o[e].checked;for(var t=0;t<o.length;t++)o[t].checked&&(r=""==r?o[t].name:r+","+o[t].name);this.flavorList=o,this.flavor=r},setPay:function(e){if(2==e&&this.userInfo.money<Number(this.order_pay_price))return!1;this.pay_mode=e},subMsg:function(){var o=this;return 0==o.order_total_num?(o.cashier_show=!1,r.showError("订单商品不可为空"),!1):20==o.order_mode&&o.intra_region?(o.cashier_show=!1,r.showError("当前地址超出配送范围"),!1):void e.requestSubscribeMessage({tmplIds:o.tpl,complete:function(e){return o.payment(),!0}})},payment:function(){var o=this;0==o.order_pay_price&&(o.pay_mode=2);var t={order_mode:o.order_mode,pay_mode:o.pay_mode,message:o.message,coupon_user_id:o.coupon_user_id,flavor:o.flavor};if(10==o.order_mode&&o.table_id>0){if(t.table_id=o.table_id,1==o.shop.order.is_people&&(""==o.people||o.people<1)&&1==o.is_order)return r.showError("请设置就餐人数"),!1;t.people=o.people}r._post_form("order/cart",t,(function(t){(function(t){o.cashier_show=!1,-10===t.code?r.showError(t.msg,(function(){r.goTo("order/detail?id="+t.data.order_id)})):0==o.pay_mode||2==o.pay_mode?r.showSuccess("下单成功",(function(){r.goTo("order/detail?id="+t.data.order_id)})):e.requestPayment({timeStamp:t.data.payment.timeStamp,nonceStr:t.data.payment.nonceStr,package:t.data.payment.package,signType:t.data.payment.signType,paySign:t.data.payment.paySign,success:function(e){r.showSuccess("支付成功",(function(){r.goTo("order/detail?id="+t.data.order_id)}))},fail:function(e){var o="支付失败";"requestPayment:fail cancel"==e.errMsg&&(o="用户取消支付"),r.showError(o,(function(){r.goTo("order/detail?id="+t.data.order_id)}))}})})(t)}),(function(e){}),(function(){}))},setPeople:function(){if(""==this.people||this.people<1)return r.showError("请输入正确的就餐人数"),!1;this.peopleShow=!1,this.getCartOrder()},useCoupon:function(e){this.coupon_user_id=this.coupon_list[e].coupon_user_id,this.coupon_show=!1,this.getCartOrder()},getTpl:function(){var e=this;r._get("setting/tpl",{order_mode:String(e.order_mode),table_id:e.table_id},(function(o){e.tpl=o.data}))},goTo:function(e){r.goTo(e)}}};o.default=t}).call(this,r("df3c")["default"])},"7dcc":function(e,o,r){"use strict";var t=r("b4a9"),n=r.n(t);n.a},8320:function(e,o,r){"use strict";(function(e,o){var t=r("47a9");r("8ae9");t(r("3240"));var n=t(r("b1e3"));e.__webpack_require_UNI_MP_PLUGIN__=r,o(n.default)}).call(this,r("3223")["default"],r("df3c")["createPage"])},b1e3:function(e,o,r){"use strict";r.r(o);var t=r("2f77"),n=r("f7f1");for(var i in n)["default"].indexOf(i)<0&&function(e){r.d(o,e,(function(){return n[e]}))}(i);r("7dcc");var u=r("828b"),a=Object(u["a"])(n["default"],t["b"],t["c"],!1,null,"068745b9",null,!1,t["a"],void 0);o["default"]=a.exports},b4a9:function(e,o,r){},f7f1:function(e,o,r){"use strict";r.r(o);var t=r("41c9"),n=r.n(t);for(var i in t)["default"].indexOf(i)<0&&function(e){r.d(o,e,(function(){return t[e]}))}(i);o["default"]=n.a}},[["8320","common/runtime","common/vendor"]]]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+  ["pages/shop/checkout"], { "2f77": function (e, o, r) { "use strict";
+      r.d(o, "b", (function () { return n })), r.d(o, "c", (function () { return i })), r.d(o, "a", (
+    function () { return t })); var t = { uIcon: function () { return Promise.all([r.e("common/vendor"), r.e(
+              "uni_modules/uview-ui/components/u-icon/u-icon")]).then(r.bind(null, "fa8a")) },
+      uAlert: function () { return Promise.all([r.e("common/vendor"), r.e(
+              "uni_modules/uview-ui/components/u-alert/u-alert")]).then(r.bind(null, "6a6a")) },
+          uButton: function () { return Promise.all([r.e("common/vendor"), r.e(
+                "uni_modules/uview-ui/components/u-button/u-button")]).then(r.bind(null,
+              "1750")) }, "u-Input": function () { return Promise.all([r.e("common/vendor"), r.e(
+                "uni_modules/uview-ui/components/u--input/u--input")]).then(r.bind(null, "07cc")) },
+          uTag: function () { return Promise.all([r.e("common/vendor"), r.e(
+                "uni_modules/uview-ui/components/u-tag/u-tag")]).then(r.bind(null, "160e")) },
+      uPopup: function () { return Promise.all([r.e("common/vendor"), r.e(
+              "uni_modules/uview-ui/components/u-popup/u-popup")]).then(r.bind(null, "5f49")) } },
+        n = function () { var e = this,
+            o = e.$createElement,
+            r = (e._self._c, e.gift ? e.goods_list.length : null),
+            t = !e.coupon_user_id && e.coupon_list ? e.coupon_list.length : null,
+            n = Number(e.userInfo.money),
+            i = Number(e.order_pay_price),
+            u = Number(e.userInfo.money),
+            a = Number(e.order_pay_price),
+            s = Number(e.userInfo.money),
+            d = Number(e.order_pay_price),
+            c = Number(e.userInfo.money),
+            p = Number(e.order_pay_price);
+          e._isMounted || (e.e0 = function (o) { e.peopleShow = !0 }, e.e1 = function (o) { e.coupon_list && (e
+              .coupon_show = !0) }, e.e2 = function (o) { e.cashier_show = !1 }, e.e3 = function (o) { e
+              .coupon_show = !1 }), e.$mp.data = Object.assign({}, { $root: { g0: r, g1: t, m0: n, m1: i, m2: u,
+              m3: a, m4: s, m5: d, m6: c, m7: p } }) },
+        i = [] }, "41c9": function (e, o, r) { "use strict";
+      (function (e) { Object.defineProperty(o, "__esModule", { value: !0 }), o.default = void 0; var r = getApp(),
+          t = { data: function () { return { applet: {}, shop: {}, order_mode: "", table_id: 0, mp: "",
+                userInfo: {}, flavorList: null, flavor: "", tpl: null, is_order: 1, table_name: "",
+                peopleShow: !1, people: "", cashier_show: !1, after_pay: 0, pay_mode: 1, message: "",
+                coupon_user_id: 0, coupon_show: !1, goods_list: [], coupon_list: null, gift: null,
+                address: null, order_pay_price: "0.00", order_total_num: 0, order_total_price: "0.00",
+                min_price: "0.00", activity_price: "0.00", delivery_price: "0.00", vip_price: "0.00",
+                pack_price: "0.00", ware_price: "0.00", free_delivery: !1, intra_region: !1, has_error: !1,
+                error_msg: "" } }, props: {}, onLoad: function (e) { var o = r.getApplet();
+              this.applet = o, this.table_id = e.table_id || 0, this.order_mode = e.order_mode, this
+              .getShop(), this.mp = "weixin", this.getTpl() }, onShow: function () { this.getCartOrder(), this
+                .getUserDetail() }, methods: { setCashier: function () { if (20 == this.order_mode) { if (
+                    null == this.address) return r.showError("请添加一个收货地址"), !1; if (this.intra_region) return r
+                    .showError("收货地址超出配送范围"), !1 } this.cashier_show = !0 }, setOrderMode: function (e) { this
+                  .order_mode = e, this.getCartOrder() }, getShop: function () { var e = this;
+                r._get("shop/detail", {}, (function (o) { e.shop = o.data, e.after_pay = e.shop.order
+                    .after_pay, 1 == e.shop.order.is_flavor && e.getFlavor() })) },
+          getCartOrder: function () { var e = this,
+                  o = { order_mode: e.order_mode, coupon_user_id: e.coupon_user_id, table_id: e.table_id,
+                    people: e.people };
+                r._get("order/cart", o, (function (o) {
+                  (function (o) { var t = o.data.goods_list; if (0 == t.length && e.goTo("order/index"),
+                      1 !== o.code) return r.showError(o.msg), !1;
+                    o.data.has_error && r.showError(o.data.error_msg), e.setData(o.data), 10 == e
+                      .order_mode && e.table_id > 0 && (1 != o.data.is_order || 1 != e.shop.order
+                        .is_people || e.people || (e.peopleShow = !0)) })(o) })) },
+          getUserDetail: function () { var e = this;
+                r._get("user/detail", {}, (function (o) { e.userInfo = o.data })) },
+          getFlavor: function () { var e = this;
+                r._get("order/flavor", {}, (function (o) { e.flavorList = o.data })) }, setFlavor: function (
+              e) { var o = this.flavorList,
+                  r = "";
+                o[e].checked = !o[e].checked; for (var t = 0; t < o.length; t++) o[t].checked && (r = "" ==
+                  r ? o[t].name : r + "," + o[t].name);
+                this.flavorList = o, this.flavor = r }, setPay: function (e) { if (2 == e && this.userInfo
+                  .money < Number(this.order_pay_price)) return !1;
+                this.pay_mode = e }, subMsg: function () { var o = this; return 0 == o.order_total_num ? (o
+                    .cashier_show = !1, r.showError("订单商品不可为空"), !1) : 20 == o.order_mode && o.intra_region ?
+                  (o.cashier_show = !1, r.showError("当前地址超出配送范围"), !1) : void e
+                  .requestSubscribeMessage({ tmplIds: o.tpl, complete: function (e) { return o.payment(), !
+                        0 } }) }, payment: function () { var o = this;
+                0 == o.order_pay_price && (o.pay_mode = 2); var t = { order_mode: o.order_mode, pay_mode: o
+                    .pay_mode, message: o.message, coupon_user_id: o.coupon_user_id, flavor: o.flavor }; if (
+                  10 == o.order_mode && o.table_id > 0) { if (t.table_id = o.table_id, 1 == o.shop.order
+                    .is_people && ("" == o.people || o.people < 1) && 1 == o.is_order) return r.showError(
+                    "请设置就餐人数"), !1;
+                  t.people = o.people } r._post_form("order/cart", t, (function (t) {
+                  (function (t) { o.cashier_show = !1, -10 === t.code ? r.showError(t.msg, (
+                    function () { r.goTo("order/detail?id=" + t.data.order_id) })) : 0 == o
+                      .pay_mode || 2 == o.pay_mode ? r.showSuccess("下单成功", (function () { r.goTo(
+                          "order/detail?id=" + t.data.order_id) })) : e.requestPayment({ timeStamp: t
+                          .data.payment.timeStamp, nonceStr: t.data.payment.nonceStr, package: t
+                          .data.payment.package, signType: t.data.payment.signType, paySign: t.data
+                          .payment.paySign, success: function (e) { r.showSuccess("支付成功", (
+                            function () { r.goTo("order/detail?id=" + t.data.order_id) })) },
+                        fail: function (e) { var o = "支付失败"; "requestPayment:fail cancel" == e
+                              .errMsg && (o = "用户取消支付"), r.showError(o, (function () { r.goTo(
+                                  "order/detail?id=" + t.data.order_id) })) } }) })(t) }), (function (
+                  e) {}), (function () {})) }, setPeople: function () { if ("" == this.people || this.people <
+                  1) return r.showError("请输入正确的就餐人数"), !1;
+                this.peopleShow = !1, this.getCartOrder() }, useCoupon: function (e) { this.coupon_user_id =
+                  this.coupon_list[e].coupon_user_id, this.coupon_show = !1, this.getCartOrder() },
+              getTpl: function () { var e = this;
+                  r._get("setting/tpl", { order_mode: String(e.order_mode), table_id: e.table_id }, (function (
+                    o) { e.tpl = o.data })) }, goTo: function (e) { r.goTo(e) } } };
+        o.default = t }).call(this, r("df3c")["default"]) }, "7dcc": function (e, o, r) { "use strict"; var t = r(
+          "b4a9"),
+        n = r.n(t);
+      n.a }, 8320: function (e, o, r) { "use strict";
+      (function (e, o) { var t = r("47a9");
+        r("8ae9");
+        t(r("3240")); var n = t(r("b1e3"));
+        e.__webpack_require_UNI_MP_PLUGIN__ = r, o(n.default) }).call(this, r("3223")["default"], r("df3c")[
+        "createPage"]) }, b1e3: function (e, o, r) { "use strict";
+      r.r(o); var t = r("2f77"),
+        n = r("f7f1"); for (var i in n)["default"].indexOf(i) < 0 && function (e) { r.d(o, e, (
+      function () { return n[e] })) }(i);
+      r("7dcc"); var u = r("828b"),
+        a = Object(u["a"])(n["default"], t["b"], t["c"], !1, null, "068745b9", null, !1, t["a"], void 0);
+      o["default"] = a.exports }, b4a9: function (e, o, r) {}, f7f1: function (e, o, r) { "use strict";
+      r.r(o); var t = r("41c9"),
+        n = r.n(t); for (var i in t)["default"].indexOf(i) < 0 && function (e) { r.d(o, e, (
+      function () { return t[e] })) }(i);
+      o["default"] = n.a } },
+  [
+    ["8320", "common/runtime", "common/vendor"]
+  ]
+]);
