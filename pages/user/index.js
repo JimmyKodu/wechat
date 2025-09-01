@@ -1,1 +1,103 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/user/index"],{1883:function(n,e,i){"use strict";i.r(e);var t=i("94f0"),o=i.n(t);for(var u in t)["default"].indexOf(u)<0&&function(n){i.d(e,n,(function(){return t[n]}))}(u);e["default"]=o.a},"670c":function(n,e,i){"use strict";var t=i("9b42"),o=i.n(t);o.a},"738f":function(n,e,i){"use strict";i.d(e,"b",(function(){return o})),i.d(e,"c",(function(){return u})),i.d(e,"a",(function(){return t}));var t={uIcon:function(){return Promise.all([i.e("common/vendor"),i.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(i.bind(null,"fa8a"))},uButton:function(){return Promise.all([i.e("common/vendor"),i.e("uni_modules/uview-ui/components/u-button/u-button")]).then(i.bind(null,"1750"))},uGrid:function(){return Promise.all([i.e("common/vendor"),i.e("uni_modules/uview-ui/components/u-grid/u-grid")]).then(i.bind(null,"f526"))},uGridItem:function(){return Promise.all([i.e("common/vendor"),i.e("uni_modules/uview-ui/components/u-grid-item/u-grid-item")]).then(i.bind(null,"b788"))},uPopup:function(){return Promise.all([i.e("common/vendor"),i.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(i.bind(null,"5f49"))}},o=function(){var n=this,e=n.$createElement,i=(n._self._c,n.isLogin?null:n.$t("common.register")),t=n.isLogin?null:n.$t("common.log_on"),o=n.isLogin&&1==n.userInfo.v.grade.is_open&&n.userInfo.v.value?n.$t("user.index.vip_title"):null,u=n.isLogin&&1==n.userInfo.v.grade.is_open&&!n.userInfo.v.value?n.$t("user.index.vip_text"):null,r=n.isLogin&&1==n.userInfo.v.grade.is_open&&!n.userInfo.v.value?n.$t("user.index.vip_button"):null,s=n.$t("user.index.my_assets"),l=n.$t("user.index.integral"),a=n.isLogin?n.$t("user.index.not_used"):null,c=n.isLogin?null:n.$t("user.index.view_integral"),d=n.$t("user.index.coupon"),f=n.isLogin?n.$t("user.index.not_used"):null,g=n.isLogin?null:n.$t("user.index.view_coupon"),m=n.$t("user.index.balance"),v=n.isLogin?n.$t("user.index.not_used"):null,p=n.isLogin?null:n.$t("user.index.view_balance"),_=n.$t("user.index.my_functions"),h=n.$t("user.index.recharge"),x=n.$t("user.index.sign_in"),$=n.$t("user.index.address"),b=n.$t("user.index.reservation"),L=n.$t("user.index.evaluate"),w=n.$t("user.index.setting"),I=n.$t("user.index.contact"),P=n.$t("user.index.login.text"),k=n.$t("user.index.login.title"),C=n.$t("user.index.login.not_login");n._isMounted||(n.e0=function(e){n.login=!1},n.e1=function(e){n.login=!1}),n.$mp.data=Object.assign({},{$root:{m0:i,m1:t,m2:o,m3:u,m4:r,m5:s,m6:l,m7:a,m8:c,m9:d,m10:f,m11:g,m12:m,m13:v,m14:p,m15:_,m16:h,m17:x,m18:$,m19:b,m20:L,m21:w,m22:I,m23:P,m24:k,m25:C}})},u=[]},"94f0":function(n,e,i){"use strict";(function(n){var t=i("47a9");Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var o=t(i("7eb4")),u=t(i("ee10")),r=getApp(),s={data:function(){return{applet:{},isLogin:!1,login:!1,login_icon:"",userInfo:{avatar:{url:""},v:{grade:{},value:0}},orderCount:{},couponCount:{}}},props:{},onLoad:function(e){n.setNavigationBarTitle({title:this.$t("user.index.title")})},onShow:function(){var n=this;return(0,u.default)(o.default.mark((function e(){var i,t,u;return o.default.wrap((function(e){while(1)switch(e.prev=e.next){case 0:return i=n,e.next=3,i.$onLaunched;case 3:i.login=!1,i.isLogin=r.checkIsLogin(),t=r.getApplet(),u=t.domain+"/addons/single/applet/user/",i.applet=t,i.isLogin&&i.getUserDetail(),i.login_icon=u+"wechat.png";case 10:case"end":return e.stop()}}),e)})))()},methods:{getPhoneNumber:function(n){var e=this;r.getPhoneNumber(n,(function(n){e.login=!1,e.isLogin=!0,e.isLogin=r.checkIsLogin(),e.isLogin&&(e.getUserDetail(),r.showSuccess(n))}))},phone:function(e){n.makePhoneCall({phoneNumber:e})},getIndex:function(){var n=this;r._get("user.index/index",{},(function(e){n.orderCount=e.data.orderCount,n.couponCount=e.data.couponCount}))},getUserDetail:function(){var n=this;r._get("user/detail",{},(function(e){n.userInfo=e.data,n.getIndex()}))},doLogin:function(){this.login=!0},goTo:function(n){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=this;if(e&&!i.onCheckLogin())return!1;r.goTo(n)},onCheckLogin:function(){return!!this.isLogin||(r.showError(this.$t("user.index.login.check_login")),!1)}}};e.default=s}).call(this,i("df3c")["default"])},"9b42":function(n,e,i){},"9df1":function(n,e,i){"use strict";i.r(e);var t=i("738f"),o=i("1883");for(var u in o)["default"].indexOf(u)<0&&function(n){i.d(e,n,(function(){return o[n]}))}(u);i("670c");var r=i("828b"),s=Object(r["a"])(o["default"],t["b"],t["c"],!1,null,"5cb39253",null,!1,t["a"],void 0);e["default"]=s.exports},c48b:function(n,e,i){"use strict";(function(n,e){var t=i("47a9");i("8ae9");t(i("3240"));var o=t(i("9df1"));n.__webpack_require_UNI_MP_PLUGIN__=i,e(o.default)}).call(this,i("3223")["default"],i("df3c")["createPage"])}},[["c48b","common/runtime","common/vendor"]]]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+  ["pages/user/index"], { 1883: function (n, e, i) { "use strict";
+      i.r(e); var t = i("94f0"),
+        o = i.n(t); for (var u in t)["default"].indexOf(u) < 0 && function (n) { i.d(e, n, (
+      function () { return t[n] })) }(u);
+      e["default"] = o.a }, "670c": function (n, e, i) { "use strict"; var t = i("9b42"),
+        o = i.n(t);
+      o.a }, "738f": function (n, e, i) { "use strict";
+      i.d(e, "b", (function () { return o })), i.d(e, "c", (function () { return u })), i.d(e, "a", (
+    function () { return t })); var t = { uIcon: function () { return Promise.all([i.e("common/vendor"), i.e(
+              "uni_modules/uview-ui/components/u-icon/u-icon")]).then(i.bind(null, "fa8a")) },
+        uButton: function () { return Promise.all([i.e("common/vendor"), i.e(
+              "uni_modules/uview-ui/components/u-button/u-button")]).then(i.bind(null, "1750")) },
+          uGrid: function () { return Promise.all([i.e("common/vendor"), i.e(
+                "uni_modules/uview-ui/components/u-grid/u-grid")]).then(i.bind(null, "f526")) },
+          uGridItem: function () { return Promise.all([i.e("common/vendor"), i.e(
+                "uni_modules/uview-ui/components/u-grid-item/u-grid-item")]).then(i.bind(null, "b788")) },
+          uPopup: function () { return Promise.all([i.e("common/vendor"), i.e(
+                "uni_modules/uview-ui/components/u-popup/u-popup")]).then(i.bind(null, "5f49")) } },
+        o = function () { var n = this,
+            e = n.$createElement,
+            i = (n._self._c, n.isLogin ? null : n.$t("common.register")),
+            t = n.isLogin ? null : n.$t("common.log_on"),
+            o = n.isLogin && 1 == n.userInfo.v.grade.is_open && n.userInfo.v.value ? n.$t(
+            "user.index.vip_title") : null,
+            u = n.isLogin && 1 == n.userInfo.v.grade.is_open && !n.userInfo.v.value ? n.$t(
+            "user.index.vip_text") : null,
+            r = n.isLogin && 1 == n.userInfo.v.grade.is_open && !n.userInfo.v.value ? n.$t(
+              "user.index.vip_button") : null,
+            s = n.$t("user.index.my_assets"),
+            l = n.$t("user.index.integral"),
+            a = n.isLogin ? n.$t("user.index.not_used") : null,
+            c = n.isLogin ? null : n.$t("user.index.view_integral"),
+            d = n.$t("user.index.coupon"),
+            f = n.isLogin ? n.$t("user.index.not_used") : null,
+            g = n.isLogin ? null : n.$t("user.index.view_coupon"),
+            m = n.$t("user.index.balance"),
+            v = n.isLogin ? n.$t("user.index.not_used") : null,
+            p = n.isLogin ? null : n.$t("user.index.view_balance"),
+            _ = n.$t("user.index.my_functions"),
+            h = n.$t("user.index.recharge"),
+            x = n.$t("user.index.sign_in"),
+            $ = n.$t("user.index.address"),
+            b = n.$t("user.index.reservation"),
+            L = n.$t("user.index.evaluate"),
+            w = n.$t("user.index.setting"),
+            I = n.$t("user.index.contact"),
+            P = n.$t("user.index.login.text"),
+            k = n.$t("user.index.login.title"),
+            C = n.$t("user.index.login.not_login");
+          n._isMounted || (n.e0 = function (e) { n.login = !1 }, n.e1 = function (e) { n.login = !1 }), n.$mp
+            .data = Object.assign({}, { $root: { m0: i, m1: t, m2: o, m3: u, m4: r, m5: s, m6: l, m7: a, m8: c,
+                m9: d, m10: f, m11: g, m12: m, m13: v, m14: p, m15: _, m16: h, m17: x, m18: $, m19: b, m20: L,
+                m21: w, m22: I, m23: P, m24: k, m25: C } }) },
+        u = [] }, "94f0": function (n, e, i) { "use strict";
+      (function (n) { var t = i("47a9");
+        Object.defineProperty(e, "__esModule", { value: !0 }), e.default = void 0; var o = t(i("7eb4")),
+          u = t(i("ee10")),
+          r = getApp(),
+          s = { data: function () { return { applet: {}, isLogin: !1, login: !1, login_icon: "",
+                userInfo: { avatar: { url: "" }, v: { grade: {}, value: 0 } }, orderCount: {},
+                couponCount: {} } }, props: {}, onLoad: function (e) { n.setNavigationBarTitle({ title: this.$t(
+                  "user.index.title") }) }, onShow: function () { var n = this; return (0, u.default)(o.default
+                .mark((function e() { var i, t, u; return o.default.wrap((function (e) { while (1) switch (e
+                      .prev = e.next) {
+                      case 0:
+                        return i = n, e.next = 3, i.$onLaunched;
+                      case 3:
+                        i.login = !1, i.isLogin = r.checkIsLogin(), t = r.getApplet(), u = t
+                          .domain + "/addons/single/applet/user/", i.applet = t, i.isLogin && i
+                          .getUserDetail(), i.login_icon = u + "wechat.png";
+                      case 10:
+                      case "end":
+                        return e.stop() } }), e) })))() }, methods: { getPhoneNumber: function (n) { var e =
+                  this;
+                r.getPhoneNumber(n, (function (n) { e.login = !1, e.isLogin = !0, e.isLogin = r
+                  .checkIsLogin(), e.isLogin && (e.getUserDetail(), r.showSuccess(n)) })) }, phone: function (
+              e) { n.makePhoneCall({ phoneNumber: e }) }, getIndex: function () { var n = this;
+                r._get("user.index/index", {}, (function (e) { n.orderCount = e.data.orderCount, n
+                    .couponCount = e.data.couponCount })) }, getUserDetail: function () { var n = this;
+                r._get("user/detail", {}, (function (e) { n.userInfo = e.data, n.getIndex() })) },
+              doLogin: function () { this.login = !0 }, goTo: function (n) { var e = !(arguments.length > 1 &&
+                    void 0 !== arguments[1]) || arguments[1],
+                  i = this; if (e && !i.onCheckLogin()) return !1;
+                r.goTo(n) }, onCheckLogin: function () { return !!this.isLogin || (r.showError(this.$t(
+                  "user.index.login.check_login")), !1) } } };
+        e.default = s }).call(this, i("df3c")["default"]) }, "9b42": function (n, e, i) {}, "9df1": function (n, e,
+      i) { "use strict";
+      i.r(e); var t = i("738f"),
+        o = i("1883"); for (var u in o)["default"].indexOf(u) < 0 && function (n) { i.d(e, n, (
+      function () { return o[n] })) }(u);
+      i("670c"); var r = i("828b"),
+        s = Object(r["a"])(o["default"], t["b"], t["c"], !1, null, "5cb39253", null, !1, t["a"], void 0);
+      e["default"] = s.exports }, c48b: function (n, e, i) { "use strict";
+      (function (n, e) { var t = i("47a9");
+        i("8ae9");
+        t(i("3240")); var o = t(i("9df1"));
+        n.__webpack_require_UNI_MP_PLUGIN__ = i, e(o.default) }).call(this, i("3223")["default"], i("df3c")[
+        "createPage"]) } },
+  [
+    ["c48b", "common/runtime", "common/vendor"]
+  ]
+]);

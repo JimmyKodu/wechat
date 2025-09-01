@@ -1,1 +1,68 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/order/pay_bill"],{"1af9":function(n,e,t){"use strict";var o=t("3d1f"),u=t.n(o);u.a},"3d1f":function(n,e,t){},aeb9:function(n,e,t){"use strict";t.d(e,"b",(function(){return u})),t.d(e,"c",(function(){return a})),t.d(e,"a",(function(){return o}));var o={"u-Input":function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u--input/u--input")]).then(t.bind(null,"07cc"))},uButton:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-button/u-button")]).then(t.bind(null,"1750"))},uPopup:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(t.bind(null,"5f49"))},uIcon:function(){return Promise.all([t.e("common/vendor"),t.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(t.bind(null,"fa8a"))}},u=function(){var n=this,e=n.$createElement;n._self._c;n._isMounted||(n.e0=function(e){n.cashier_show=!1})},a=[]},b9da:function(n,e,t){"use strict";t.r(e);var o=t("aeb9"),u=t("e84f");for(var a in u)["default"].indexOf(a)<0&&function(n){t.d(e,n,(function(){return u[n]}))}(a);t("1af9");var r=t("828b"),i=Object(r["a"])(u["default"],o["b"],o["c"],!1,null,"b806310a",null,!1,o["a"],void 0);e["default"]=i.exports},d108:function(n,e,t){"use strict";(function(n){var o=t("47a9");Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var u=o(t("7eb4")),a=o(t("ee10")),r=getApp(),i={data:function(){return{applet:{},mp:"",shop:{},pay_mode:1,cashier_show:!1,money:"",notes:""}},props:{},onLoad:function(e){var t=this;return(0,a.default)(u.default.mark((function e(){var o;return u.default.wrap((function(e){while(1)switch(e.prev=e.next){case 0:return o=t,e.next=3,o.$onLaunched;case 3:o.applet=n.getStorageSync("applet"),o.shop=o.applet.shop,o.mp="weixin";case 6:case"end":return e.stop()}}),e)})))()},onShow:function(){},methods:{setPay:function(n){this.pay_mode=n},cashier:function(){var n=Number(this.money);if(n<=0)return r.showError("买单金额必须大于0"),!1;this.cashier_show=!0},payment:function(){var e=this,t={money:Number(e.money),pay_mode:e.pay_mode,notes:e.notes};n.showLoading({title:"正在处理..."}),r._post_form("user.order/paybill",t,(function(t){(function(t){e.cashier_show=!1,-10===t.code?r.showError(t.msg):2==e.pay_mode?r.showSuccess("买单成功",(function(){e.money="",e.notes=""})):n.requestPayment({timeStamp:t.data.payment.timeStamp,nonceStr:t.data.payment.nonceStr,package:t.data.payment.package,signType:t.data.payment.signType,paySign:t.data.payment.paySign,success:function(n){r.showSuccess("买单成功",(function(){e.money="",e.notes=""}))},fail:function(n){var e="支付失败";"requestPayment:fail cancel"==n.errMsg&&(e="用户取消支付"),r.showError(e)}})})(t)}))}}};e.default=i}).call(this,t("df3c")["default"])},e84f:function(n,e,t){"use strict";t.r(e);var o=t("d108"),u=t.n(o);for(var a in o)["default"].indexOf(a)<0&&function(n){t.d(e,n,(function(){return o[n]}))}(a);e["default"]=u.a},f8e5:function(n,e,t){"use strict";(function(n,e){var o=t("47a9");t("8ae9");o(t("3240"));var u=o(t("b9da"));n.__webpack_require_UNI_MP_PLUGIN__=t,e(u.default)}).call(this,t("3223")["default"],t("df3c")["createPage"])}},[["f8e5","common/runtime","common/vendor"]]]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+  ["pages/order/pay_bill"], { "1af9": function (n, e, t) { "use strict"; var o = t("3d1f"),
+        u = t.n(o);
+      u.a }, "3d1f": function (n, e, t) {}, aeb9: function (n, e, t) { "use strict";
+      t.d(e, "b", (function () { return u })), t.d(e, "c", (function () { return a })), t.d(e, "a", (
+    function () { return o })); var o = { "u-Input": function () { return Promise.all([t.e("common/vendor"), t.e(
+              "uni_modules/uview-ui/components/u--input/u--input")]).then(t.bind(null, "07cc")) },
+          uButton: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-button/u-button")]).then(t.bind(null, "1750")) },
+          uPopup: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-popup/u-popup")]).then(t.bind(null, "5f49")) },
+          uIcon: function () { return Promise.all([t.e("common/vendor"), t.e(
+                "uni_modules/uview-ui/components/u-icon/u-icon")]).then(t.bind(null, "fa8a")) } },
+        u = function () { var n = this,
+            e = n.$createElement;
+          n._self._c;
+          n._isMounted || (n.e0 = function (e) { n.cashier_show = !1 }) },
+        a = [] }, b9da: function (n, e, t) { "use strict";
+      t.r(e); var o = t("aeb9"),
+        u = t("e84f"); for (var a in u)["default"].indexOf(a) < 0 && function (n) { t.d(e, n, (
+      function () { return u[n] })) }(a);
+      t("1af9"); var r = t("828b"),
+        i = Object(r["a"])(u["default"], o["b"], o["c"], !1, null, "b806310a", null, !1, o["a"], void 0);
+      e["default"] = i.exports }, d108: function (n, e, t) { "use strict";
+      (function (n) { var o = t("47a9");
+        Object.defineProperty(e, "__esModule", { value: !0 }), e.default = void 0; var u = o(t("7eb4")),
+          a = o(t("ee10")),
+          r = getApp(),
+          i = { data: function () { return { applet: {}, mp: "", shop: {}, pay_mode: 1, cashier_show: !1,
+                money: "", notes: "" } }, props: {}, onLoad: function (e) { var t = this; return (0, a.default)(
+                u.default.mark((function e() { var o; return u.default.wrap((function (e) { while (1)
+                      switch (e.prev = e.next) {
+                        case 0:
+                          return o = t, e.next = 3, o.$onLaunched;
+                        case 3:
+                          o.applet = n.getStorageSync("applet"), o.shop = o.applet.shop, o.mp =
+                            "weixin";
+                        case 6:
+                        case "end":
+                          return e.stop() } }), e) })))() }, onShow: function () {},
+            methods: { setPay: function (n) { this.pay_mode = n }, cashier: function () { var n = Number(this
+                  .money); if (n <= 0) return r.showError("买单金额必须大于0"), !1;
+                this.cashier_show = !0 }, payment: function () { var e = this,
+                  t = { money: Number(e.money), pay_mode: e.pay_mode, notes: e.notes };
+                n.showLoading({ title: "正在处理..." }), r._post_form("user.order/paybill", t, (function (t) {
+                  (function (t) { e.cashier_show = !1, -10 === t.code ? r.showError(t.msg) : 2 == e
+                      .pay_mode ? r.showSuccess("买单成功", (function () { e.money = "", e.notes =
+                        "" })) : n.requestPayment({ timeStamp: t.data.payment.timeStamp, nonceStr: t
+                          .data.payment.nonceStr, package: t.data.payment.package, signType: t.data
+                          .payment.signType, paySign: t.data.payment.paySign, success: function (
+                          n) { r.showSuccess("买单成功", (function () { e.money = "", e.notes =
+                              "" })) }, fail: function (n) { var e =
+                          "支付失败"; "requestPayment:fail cancel" == n.errMsg && (e = "用户取消支付"), r
+                            .showError(e) } }) })(t) })) } } };
+        e.default = i }).call(this, t("df3c")["default"]) }, e84f: function (n, e, t) { "use strict";
+      t.r(e); var o = t("d108"),
+        u = t.n(o); for (var a in o)["default"].indexOf(a) < 0 && function (n) { t.d(e, n, (
+      function () { return o[n] })) }(a);
+      e["default"] = u.a }, f8e5: function (n, e, t) { "use strict";
+      (function (n, e) { var o = t("47a9");
+        t("8ae9");
+        o(t("3240")); var u = o(t("b9da"));
+        n.__webpack_require_UNI_MP_PLUGIN__ = t, e(u.default) }).call(this, t("3223")["default"], t("df3c")[
+        "createPage"]) } },
+  [
+    ["f8e5", "common/runtime", "common/vendor"]
+  ]
+]);
